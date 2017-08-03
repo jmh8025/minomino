@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>8일차(회원수정 및 회원탈퇴 구현)</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\kitcoop\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+
+      
+      
+
+      <style> 
+      /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+abap+actionscript+ada+apacheconf+apl+applescript+asciidoc+aspnet+autoit+autohotkey+bash+basic+batch+c+brainfuck+bro+bison+csharp+cpp+coffeescript+ruby+css-extras+d+dart+django+diff+docker+eiffel+elixir+erlang+fsharp+fortran+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+http+icon+inform7+ini+j+jade+java+jolie+json+julia+keyman+kotlin+latex+less+livescript+lolcode+lua+makefile+markdown+matlab+mel+mizar+monkey+nasm+nginx+nim+nix+nsis+objectivec+ocaml+oz+parigp+parser+pascal+perl+php+php-extras+powershell+processing+prolog+properties+protobuf+puppet+pure+python+q+qore+r+jsx+reason+rest+rip+roboconf+crystal+rust+sas+sass+scss+scala+scheme+smalltalk+smarty+sql+stylus+swift+tcl+textile+twig+typescript+vbnet+verilog+vhdl+vim+wiki+xojo+yaml */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;padding:2em;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#0050a3;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:16px;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:normal}}@media screen and (min-width:914px){html body:not([data-presentation-mode]){width:980px;margin:10px auto}}@media screen and (max-width:400px){html body:not([data-presentation-mode]){font-size:14px;margin:0 auto;padding:15px}}html body .pagebreak,html body .newpage{page-break-before:always}html body pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}html body pre.line-numbers>code{position:relative}html body pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html body pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}html body pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}html body .mathjax-exps .MathJax_Display{text-align:center !important}html body:not([for="preview"]) .code-chunk .btn-group{display:none}html body:not([for="preview"]) .code-chunk .status{display:none} 
+       
+      </style>
+    </head>
+    <body class="mume   ">
+    <h1>8일차(회원수정 및 회원탈퇴 구현)</h1>
+<h2>오늘 할일</h2>
+<p>회원수정 및 회원탈퇴 / 회원검색</p>
+<h2>프로젝트 주제 발표</h2>
+<h4 class="mume-header" id="7&#xC6D4;-28&#xC77C;">7월 28일</h4>
+
+<ul>
+<li>
+<p>금지 주제 : 영화예매 사이트 !!</p>
+</li>
+<li>
+<p>배운것을 전부 사용할 수 있으면서 실력을 업그레이드 할 수 있는 주제를 선택 할 것</p>
+</li>
+</ul>
+<hr>
+<br>
+<h2 class="mume-header" id="&#xD68C;&#xC6D0;&#xC218;&#xC815;&#xC744;-&#xC704;&#xD55C;-&#xACC4;&#xC815;&#xBCC4;-&#xD68C;&#xC6D0;&#xC815;&#xBCF4;&#xB97C;-&#xCD9C;&#xB825;-&#xBC0F;-&#xC218;&#xC815;&#xD558;&#xC790;">회원수정을 위한 계정별 회원정보를 출력 및 수정하자</h2>
+
+<h3 class="mume-header" id="1-loginjsp&#xC5D0;&#xC11C;-&#xBA54;&#xB274;&#xD56D;&#xBAA9;&#xD68C;&#xC6D0;-&#xC218;&#xC815;&#xC0AD;&#xC81C;&#xC744;-&#xCD94;&#xAC00;&#xD558;&#xC790;">1. Login.jsp에서 메뉴항목(회원 수정&amp;삭제)을 추가하자</h3>
+
+<blockquote>
+<p>회원수정이나 회원삭제버튼을 눌렀을때 현재 어떤 계정인지 알려주는 방법</p>
+</blockquote>
+<h3 class="mume-header" id="2-memberdaojava&#xC758;-getmember&#xBA54;&#xC18C;&#xB4DC;">2. MemberDAO.java의 getMember메소드</h3>
+
+<blockquote>
+<p>MemberDTO의 인스턴스를 생성후에<br>
+인스턴스의 setter 메소드를 활용하여 인스턴스에 담은뒤에 <strong>return</strong>~!</p>
+<blockquote>
+<p>아마 나중에 mem을 다시 불러서 사용하겠지 ?</p>
+</blockquote>
+</blockquote>
+<pre class="language-java">
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+      con<span class="token operator">=</span>pool<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      sql<span class="token operator">=</span><span class="token string">"select * from member where id=?"</span><span class="token punctuation">;</span>
+      pstmt<span class="token operator">=</span>con<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      pstmt<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> mem_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      rs<span class="token operator">=</span>pstmt<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//id값에 해당하는 레코드를 찾았다면?</span>
+      <span class="token comment" spellcheck="true">//String name=re.getString("name")</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mem<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MemberDTO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mem<span class="token punctuation">.</span><span class="token function">setMem_id</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mem<span class="token punctuation">.</span><span class="token function">setMem_passwd</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"passwd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mem<span class="token punctuation">.</span><span class="token function">setMem_name</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mem<span class="token punctuation">.</span><span class="token function">setMem_phone</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"phone"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mem<span class="token punctuation">.</span><span class="token function">setMem_zipcode</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"zipcode"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mem<span class="token punctuation">.</span><span class="token function">setMem_address</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"address"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mem<span class="token punctuation">.</span><span class="token function">setMem_email</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"e_mail"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mem<span class="token punctuation">.</span><span class="token function">setMem_job</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"job"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"getMember()실행 에러유발->"</span><span class="token operator">+</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">finally</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//3.DB연결해제</span>
+      pool<span class="token punctuation">.</span><span class="token function">freeConnection</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> pstmt<span class="token punctuation">,</span> rs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> mem<span class="token punctuation">;</span>
+</pre>
+<h3 class="mume-header" id="3-memberupdatejsp">3. MemberUpdate.jsp</h3>
+
+<blockquote>
+<p>직업의 수정방법</p>
+<blockquote>
+<p>mem.getMem_job()를 value값에 담음</p>
+</blockquote>
+</blockquote>
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span>mem_job</span><span class="token punctuation">></span></span>
+		        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>선택하세요.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>회사원<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>회사원<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>연구전문직<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>연구전문직<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>교수학생<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>교수학생<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>일반자영업<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>일반자영업<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>공무원<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>공무원<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>의료인<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>의료인<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>법조인<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>법조인<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>종교,언론,에술인<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>종교.언론/예술인<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>농,축,수산,광업인<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>농/축/수산/광업인<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>주부<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>주부<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>기타<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>기타<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+              regForm<span class="token punctuation">.</span>mem_job<span class="token punctuation">.</span>value<span class="token operator">=</span><span class="token string">"&lt;%=mem.getMem_job()%>"</span>
+              </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</pre>
+<p><img src="https://i.loli.net/2017/07/17/596c322ad3962.png" alt="setpro"></p>
+<p>회원수정</p>
+<ul>
+<li>
+<p>MemberUpdate.jsp(수정할 데이터를 보여줄 페이지)</p>
+</li>
+<li>
+<p>MemberUpdateProc.jsp(수정할 메소드 호출)</p>
+</li>
+</ul>
+<hr>
+<h2 class="mume-header" id="&#xB098;&#xB984;&#xC758;-&#xAFC0;&#xD301;">나름의 꿀팁</h2>
+
+<h3 class="mume-header" id="1-arraylist&#xB97C;-&#xC0AC;&#xC6A9;&#xD558;&#xC5EC;-&#xD68C;&#xC6D0;&#xB9AC;&#xC2A4;&#xD2B8;&#xB97C;-&#xB2F4;&#xAE30;">1. ArrayList를 사용하여 회원리스트를 담기</h3>
+
+<blockquote>
+<p>MemberDAO의  getMemberList()메소드<br>
+MemberDTO를 이용하여 mem인스턴스객체로 담은뒤에<br>
+memList로 객체들을 다시 담음</p>
+<blockquote>
+<p>나중에 다시불러들일때 제너릭을 사용했으니까 쉽게 불러들이겠찌 ?</p>
+</blockquote>
+</blockquote>
+<h4 class="mume-header" id="arraylist&#xC758;-&#xC790;&#xC8FC;&#xC4F0;&#xC774;&#xB294;-&#xD568;&#xC218;&#xB4E4;">ArrayList의 자주쓰이는 함수들</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">함수</th>
+<th style="text-align:left">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">get()</td>
+<td style="text-align:left">해당 배열값</td>
+</tr>
+<tr>
+<td style="text-align:left">clear</td>
+<td style="text-align:left">삭제</td>
+</tr>
+<tr>
+<td style="text-align:left">isempty</td>
+<td style="text-align:left">값 존재여부 확인</td>
+</tr>
+<tr>
+<td style="text-align:left">size()</td>
+<td style="text-align:left">배열길이</td>
+</tr>
+</tbody>
+</table>
+<pre class="language-java"><span class="token keyword">public</span> ArrayList<span class="token operator">&lt;</span>MemberDTO<span class="token operator">></span> <span class="token function">getMemberList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	Connection  con<span class="token operator">=</span>null<span class="token punctuation">;</span>
+	PreparedStatement pstmt<span class="token operator">=</span>null<span class="token punctuation">;</span>
+	ResultSet rs<span class="token operator">=</span>null<span class="token punctuation">;</span>
+	ArrayList<span class="token operator">&lt;</span>MemberDTO<span class="token operator">></span> memList<span class="token operator">=</span>null<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//id값에 해당되는 레코드한개의 정보</span>
+	String sql<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//실행시킬 sql구문</span>
+	<span class="token comment" spellcheck="true">//2.실행시킬 SQL구문이 필요</span>
+	<span class="token keyword">try</span> <span class="token punctuation">{</span>
+		con<span class="token operator">=</span>pool<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		sql<span class="token operator">=</span><span class="token string">"select * from member"</span><span class="token punctuation">;</span>
+		pstmt<span class="token operator">=</span>con<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		rs<span class="token operator">=</span>pstmt<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment" spellcheck="true">//id값에 해당하는 레코드를 찾았다면?</span>
+		<span class="token comment" spellcheck="true">//String name=re.getString("name")</span>
+		<span class="token keyword">while</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			MemberDTO mem<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MemberDTO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			mem<span class="token punctuation">.</span><span class="token function">setMem_id</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			mem<span class="token punctuation">.</span><span class="token function">setMem_passwd</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"passwd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			mem<span class="token punctuation">.</span><span class="token function">setMem_name</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			mem<span class="token punctuation">.</span><span class="token function">setMem_phone</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"phone"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			mem<span class="token punctuation">.</span><span class="token function">setMem_zipcode</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"zipcode"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			mem<span class="token punctuation">.</span><span class="token function">setMem_address</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"address"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			mem<span class="token punctuation">.</span><span class="token function">setMem_email</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"e_mail"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			mem<span class="token punctuation">.</span><span class="token function">setMem_job</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"job"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			memList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>mem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"getMemberList()실행 에러유발->"</span><span class="token operator">+</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token keyword">finally</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//3.DB연결해제</span>
+		pool<span class="token punctuation">.</span><span class="token function">freeConnection</span><span class="token punctuation">(</span>con<span class="token punctuation">,</span> pstmt<span class="token punctuation">,</span> rs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> memList<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+<br>
+<h3 class="mume-header" id="2-&#xD398;&#xC774;&#xC9C0;&#xAC00;-&#xB118;&#xC5B4;&#xAC08;&#xB54C;&#xB9C8;&#xB2E4;-&#xC774;&#xC804;&#xD398;&#xC774;&#xC9C0;&#xB294;-&#xAC12;&#xB9CC;-&#xB118;&#xACA8;&#xC900;&#xB4A4;&#xC5D0;-close&#xCC98;&#xB9AC;-&#xB428;-&#xD504;&#xB85C;&#xC138;&#xC2A4;-&#xD398;&#xC774;&#xC9C0;&#xB97C;-&#xB9CC;&#xB4DC;&#xB294;-&#xAC83;&#xC774;-&#xC774;&#xB4DD;">2. 페이지가 넘어갈때마다 이전페이지는 값만 넘겨준뒤에 close처리 됨 프로세스 페이지를 만드는 것이 이득</h3>
+
+<h3 class="mume-header" id="3-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C;-&#xC804;&#xB2EC;&#xD558;&#xAE30;&#xC704;&#xD55C;-4&#xAC00;&#xC9C0;-&#xBC29;&#xBC95;">*** 3. 매개변수를 전달하기위한 4가지 방법 ***</h3>
+
+<h5 class="mume-header" id="&#x1100;-&#xB9C1;&#xD06C;&#xBB38;&#xC790;&#xC5F4;&#xC744;-&#xC774;&#xC6A9;&#xD574;&#xC11C;-&#xD398;&#xC774;&#xC9C0;-&#xC804;&#xD658;&#xD560;&#xB54C;-&#xC0AC;&#xC6A9;">ㄱ. 링크문자열을 이용해서 페이지 전환할때 사용</h5>
+
+<pre class="language-java"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"DelCheckForm.jsp?mem_id=&lt;%=mem_id%>"</span><span class="token operator">></span>회원탈퇴<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+</pre>
+<h5 class="mume-header" id="&#x1102;-rrequest&#xAC1D;&#xCCB4;-&#xB610;&#xB294;-session&#xAC1D;&#xCCB4;&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xB370;&#xC774;&#xD130;-&#xACF5;&#xC720;&#xBC29;&#xBC95;">ㄴ. Rrequest객체 또는 Session객체를 이용한 데이터 공유방법</h5>
+
+<pre class="language-java"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"MemberUpdate.jsp"</span><span class="token operator">></span>회원수정<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+String mem_id<span class="token operator">=</span><span class="token punctuation">(</span>String<span class="token punctuation">)</span>session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"idKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+<h5 class="mume-header" id="&#x1103;-form&#xD0DC;&#xADF8;-&#xB0B4;&#xBD80;&#xC5D0;-input-typehidden-~&#xAC12;&#xC744;-&#xC804;&#xB2EC;&#xD558;&#xB294;-&#xACBD;&#xC6B0;">ㄷ. &lt;form&gt;태그 내부에 &lt;input type=&quot;hidden&quot; ~&gt;값을 전달하는 경우</h5>
+
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>전달할매개변수명<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>전달할 값<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mem_id<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%<span class="token punctuation">=</span>mem_id %<span class="token punctuation">></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</pre>
+<h5 class="mume-header" id="&#x1105;-actiondeleprojspmem_idmem_id">ㄹ. action=&quot;delePro.jsp?mem_id=&lt;%=mem_id%&gt;</h5>
+
+<br>
+
+    </body>
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+  </html>

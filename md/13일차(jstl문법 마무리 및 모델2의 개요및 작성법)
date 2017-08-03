@@ -1,0 +1,14 @@
+# 13일차(jstl문법 마무리 및 모델2의 개요및 작성법)
+
+\\192.168.0.57\webtest\final 프로젝트자료\2.프로젝트자료2(오라클 모델링자료 및 스토리보드샘플예제)\정규화 예제
+
+## forEach.jsp
+
+
+
+
+```jsp
+<c:forEach var="i" begin="1" end="100" step="2">
+<c:set var="sum" value="${sum+i}" />
+</c:forEach>
+```
