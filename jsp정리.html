@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>jsp정리</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\kitcoop\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+
+      
+      
+
+      <style> 
+      pre{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;padding:1em;margin:.5em 0;overflow:auto;line-height:1.5;tab-size:4;hyphens:none;color:#383a42;background-color:#eaeaeb !important;border:#d1d1d2;border-radius:3px}code[class*="language-"] .token.comment,pre[class*="language-"] .token.comment,code[class*="language-"] .token.prolog,pre[class*="language-"] .token.prolog,code[class*="language-"] .token.doctype,pre[class*="language-"] .token.doctype,code[class*="language-"] .token.cdata,pre[class*="language-"] .token.cdata{color:#a0a1a7}code[class*="language-"] .namespace,pre[class*="language-"] .namespace{opacity:.7}code[class*="language-"] .token.constant,pre[class*="language-"] .token.constant{color:#986801}code[class*="language-"] .token.boolean,pre[class*="language-"] .token.boolean,code[class*="language-"] .token.number,pre[class*="language-"] .token.number,code[class*="language-"] .token.function-name,pre[class*="language-"] .token.function-name{color:#986801}code[class*="language-"] .token.tag,pre[class*="language-"] .token.tag{color:#e45649}code[class*="language-"] .token.symbol,pre[class*="language-"] .token.symbol{color:#0184bc}code[class*="language-"] .token.selector,pre[class*="language-"] .token.selector{color:#a626a4}code[class*="language-"] .token.attr-name,pre[class*="language-"] .token.attr-name{color:#986801}code[class*="language-"] .token.string,pre[class*="language-"] .token.string{color:#50a14f}code[class*="language-"] .token.char,pre[class*="language-"] .token.char{color:#0184bc}code[class*="language-"] .token.url,pre[class*="language-"] .token.url{color:#0184bc}code[class*="language-"] .token.operator,pre[class*="language-"] .token.operator{color:#383a42}code[class*="language-"] .token.atrule,pre[class*="language-"] .token.atrule,code[class*="language-"] .token.attr-value,pre[class*="language-"] .token.attr-value,code[class*="language-"] .token.keyword,pre[class*="language-"] .token.keyword{color:#a626a4}code[class*="language-"] .token.function,pre[class*="language-"] .token.function{color:#4078f2}code[class*="language-"] .token.class-name,pre[class*="language-"] .token.class-name{color:#c18401}code[class*="language-"] .token.variable,pre[class*="language-"] .token.variable{color:#986801}code[class*="language-"] .token.regex,pre[class*="language-"] .token.regex{color:#0184bc}code[class*="language-"] .token.important,pre[class*="language-"] .token.important{color:#e45649}code[class*="language-"] .token.important,pre[class*="language-"] .token.important,code[class*="language-"] .token.bold,pre[class*="language-"] .token.bold{font-weight:bold}code[class*="language-"] .token.italic,pre[class*="language-"] .token.italic{font-style:italic}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{cursor:help}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#383a42;background-color:#fafafa;overflow:initial;padding:2em;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5e616e}html body strong{color:#000}html body del{color:#5e616e}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#0184bc;text-decoration:none}html body a:hover{color:#01a0e5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5e616e;border-left:4px solid #d1d1d2}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d1d1d2;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d1d1d2;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#eaeaeb;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d1d1d2;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d1d1d2;border-bottom:2px solid #c1c1c2;padding:2px 4px;background-color:#eaeaeb;border-radius:3px}@media print{html body{background-color:#fafafa}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5e616e}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}@media screen and (min-width:914px){html body:not([data-presentation-mode]){width:980px;margin:10px auto}}@media screen and (max-width:400px){html body:not([data-presentation-mode]){font-size:14px;margin:0 auto;padding:15px}}html body .pagebreak,html body .newpage{page-break-before:always}html body pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}html body pre.line-numbers>code{position:relative}html body pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html body pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}html body pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}html body .mathjax-exps .MathJax_Display{text-align:center !important}html body:not([for="preview"]) .code-chunk .btn-group{display:none}html body:not([for="preview"]) .code-chunk .status{display:none}html body:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px} 
+       
+      </style>
+    </head>
+    <body class="mume   ">
+    <h2>1일차</h2>
+<pre class="language-">**Jsp&#xD398;&#xC774;&#xC9C0;&#xC758; &#xAD6C;&#xC131;&#xC694;&#xC18C;**
+
+ &#xC6F9;&#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC694;&#xCCAD;(request)--------------------&gt;
+   &#xB9C1;&#xD06C;&#xBB38;&#xC790;&#xC5F4; &#xD074;&#xB9AD;,&#xBC84;&#xD2BC;&#xD074;&#xB9AD;,url
+                         html&#xBB38;&#xC11C;&lt;--------------------&#xC751;&#xB2F5;(response)
+
+1.&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB9BF;-&gt;&#xC6F9;&#xC0C1;&#xC5D0;&#xC11C; &#xC790;&#xBC14;&#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD574;&#xC8FC;&#xB294; &#xC601;&#xC5ED;
+                  &lt;% ~  %&gt; =&gt;&#xD0DC;&#xADF8;&#xC0AC;&#xC6A9;X(&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; X)
+                                         &#xD45C;&#xD604;&#xC2DD;&#xB3C4; &#xC0AC;&#xC6A9;&#xBD88;&#xAC00;
+
+  http://localhost:8090/JspStudy/abc/imsi.jsp
+                                               =
+                                            WebContent
+
+2.&#xD45C;&#xD604;&#xC2DD;(expression)-&gt;&#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xCD9C;&#xB825;&#xBB38; &#xB300;&#xC6A9;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;
+                                &#xBCC0;&#xC218;&#xAC12; &#xCD9C;&#xB825;,&#xBA54;&#xC11C;&#xB4DC;&#xD638;&#xCD9C;-&gt;&#xACB0;&#xACFC;&#xAC12;&#xC744; &#xCD9C;&#xB825;
+
+ &#xD615;&#xC2DD;) &lt;%=&#xBCC0;&#xC218;&#xBA85;%&gt; or &lt;%=&#xAC1D;&#xCCB4;&#xBA85;.&#xC77C;&#xBC18;&#xBA54;&#xC11C;&#xB4DC;&#xBA85;(~)%&gt;
+                                     &lt;%=&#xC815;&#xC801;&#xBA54;&#xC11C;&#xB4DC;&#xBA85;(~)%&gt;
+
+3.&#xC120;&#xC5B8;&#xBB38;(Declaration)-&gt;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB9BF;&#xACFC; &#xBAA8;&#xC591;&#xC774; &#xC720;&#xC0AC;&#xD558;&#xB2E4;.
+
+&lt;%!  ~ %&gt; =&gt;&#xC790;&#xBC14;&#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;(&#xC815;&#xC801; &#xBA64;&#xBC84;&#xBCC0;&#xC218; &#xC120;&#xC5B8;)
+                          -&gt;&#xC120;&#xC5B8;&#xB41C; &#xC704;&#xCE58;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xBCC0;&#xC218;&#xB97C; &#xBD88;&#xB7EC;&#xB2E4; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;
+                          -&gt;&#xBA54;&#xC11C;&#xB4DC; &#xC791;&#xC131;&#xC774; &#xAC00;&#xB2A5;-&gt;&#xC815;&#xC801;&#xBA54;&#xC11C;&#xB4DC; &#xB290;&#xB08C;
+                          -&gt;&#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD55C;&#xB370; &#xD604;&#xC2E4;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;X
+
+ &lt;%!
+      String name=&quot;&#xD64D;&#xAE38;&#xB3D9;&quot;;
+
+      public String getName(){ ===&gt;&#xB530;&#xB85C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC0AC;&#xC6A9;
+          return name;                  DTO(Data Transfer Object)
+                                                      DAO(Data Access Object)
+      }
+%&gt;
+
+ jsp&#xD398;&#xC774;&#xC9C0; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C; &#xB530;&#xB85C; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC120;&#xC5B8;&#xD574;&#xC11C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAD6C;&#xBB38;&#xC744; &#xC798; &#xC0AC;&#xC6A9;X
+
+ &#xB514;&#xC790;&#xC774;&#xB108;(html5,css,js)+&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;(&#xBA54;&#xC11C;&#xB4DC; &#xC791;&#xC131;)=&gt;&#xD654;&#xBA74;&#xC774; &#xBCF5;&#xC7A1;
+
+=&gt;&#xBA54;&#xC11C;&#xB4DC;&#xBD80;&#xBD84;--&gt;&#xB530;&#xB85C; &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC6F9;&#xC5D0;&#xC11C; &#xBD88;&#xB7EC;&#xC624;&#xB294; &#xACBD;&#xC6B0;
+                         &#xC790;&#xBC14;&#xBE48;&#xC988;&#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; &#xC791;&#xC5C5;&#xC744; &#xD55C;&#xB2E4;.-&gt;&#xC561;&#xC158;&#xD0DC;&#xADF8;
+----------------------------------------------------------------------
+
+4.&#xC8FC;&#xC11D;(comment) or &#xC9C0;&#xC2DC;&#xC5B4;
+    comment.jsp&#xB85C; &#xC791;&#xC131;
+
+ JSP &#xC8FC;&#xC11D;-&gt;&#xD0DC;&#xADF8;&#xC640; &#xD0DC;&#xADF8;&#xC0AC;&#xC774;&#xC5D0; &#xC801;&#xC808;&#xD788; &#xBC30;&#xCE58;
+
+1.&lt;!-- &#xB208;&#xC5D0; &#xBCF4;&#xC774;&#xB294; &#xC8FC;&#xC11D; --&gt; =&gt;html&#xC8FC;&#xC11D;
+2.&lt;%-- &#xB208;&#xC5D0; &#xC548;&#xBCF4;&#xC774;&#xB294; &#xC8FC;&#xC11D; --%&gt;
+3.&#xC790;&#xBC14;&#xC8FC;&#xC11D;-&gt; //, /*  ~ */
+
+</pre>
+<h2>2일차</h2>
+<pre class="language-">***
+contentType=&quot;text/html; charset=UTF-8&quot;
+  ==&gt;&#xD14D;&#xC2A4;&#xD2B8;&#xD615;&#xD0DC;&#xC758; html&#xBB38;&#xC11C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xBCF4;&#xB0B4;&#xC8FC;&#xB418; &#xD55C;&#xAE00;&#xC774; &#xACB0;&#xACFC;&#xC5D0; &#xD3EC;&#xD568;&#xC774; &#xB418;&#xC5B4;&#xC788;&#xB2E4;&#xBA74;
+          &#xD55C;&#xAE00;&#xC774; &#xAE68;&#xC9C0;&#xC9C0; &#xC54A;&#xC740;&#xC0C1;&#xD0DC;&#xB85C; &#xBCF4;&#xB0B4;&#xC8FC;&#xC138;&#xC694;
+
+pageEncoding=&quot;UTF-8&quot;=&gt;&#xD55C;&#xAE00;&#xCC98;&#xB9AC;&#xD574;&#xC8FC;&#xC138;&#xC694;
+
+
+*** import=&gt;&#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xBD88;&#xB7EC;&#xC62C;&#xB54C; &#xC0AC;&#xC6A9;
+
+&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;
+    import=&quot;java.util.Date&quot; %&gt;
+&lt;%@ page import=&quot;java.io.*,java.util.*&quot; %&gt; =&gt;&#xC18D;&#xC131;&#xAC12;&#xC744; &#xC5EC;&#xB7EC;&#xAC1C; &#xB098;&#xC5F4;-&gt;,,,
+&lt;%@ page import=&quot;java.sql.*&quot; %&gt; =&gt;&#xC138;&#xB85C;&#xB85C; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; import&#xC18D;&#xC131;&#xC744; &#xC4F8; &#xC218;&#xC788;&#xB2E4;.
+
+
+**&#xC11C;&#xBE14;&#xB9BF;&#xC758; &#xC870;&#xAC74;**
+
+1.import javax.servlet.* //&#xC11C;&#xBE14;&#xB9BF;&#xC758; &#xD074;&#xB798;&#xC2A4;
+   import javax.servlet.http.*;//&#xC6F9;&#xC0C1;&#xC5D0;&#xC11C;&#xC758; &#xC811;&#xC18D;&#xC5D0; &#xAD00;&#xB828;&#xB41C; &#xC815;&#xBCF4;
+   import java.io.*;//&#xC785;&#xCD9C;&#xB825;
+
+  =&gt;c:\tomcat8.5\lib-&gt;servlet-api.jar&#xD30C;&#xC77C;&#xC5D0; &#xC800;&#xC7A5;
+
+2.&#xBC18;&#xB4DC;&#xC2DC; publi class&#xB85C; &#xC791;&#xC131;&#xD574;&#xC57C; &#xB41C;&#xB2E4;.=&gt;&#xB204;&#xAD6C;&#xB098; &#xC811;&#xC18D;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD574;&#xC8FC;&#xAE30;&#xC704;&#xD574;
+3.&#xBC18;&#xB4DC;&#xC2DC; httpServlet&#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xC544;&#xC57C; &#xB41C;&#xB2E4;.
+
+httpServlet--&gt;&#xC0AC;&#xC774;&#xD2B8;&#xC5D0; &#xC811;&#xC18D;&#xD560;&#xB54C; &#xB9C8;&#xB2E4; &#xCC98;&#xB9AC;&#xD574;&#xC8FC;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;.
+                            get--------------&gt;do Get()&#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xC704;&#xD574;&#xC11C;
+                            post--------------&gt;doPost()
+</pre>
+<h2>3일차</h2>
+<pre class="language-">********&#xCC28;&#xC774;&#xC810;
+&lt;input type=&quot;submit&quot; value=&quot;&#xD45C;&#xB9CC;&#xB4E4;&#xAE30;&quot;&gt;
+  =&gt;&#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; action=&quot;box_proc.jsp&#xB85C; &#xC804;&#xC1A1;&#xD55C;&#xB2E4;.
+
+&lt;input type=&quot;button&quot; value=&quot;&#xD45C;&#xB9CC;&#xB4E4;&#xAE30;&quot; onclick=&quot;&#xD568;&#xC218;&#xBA85;()&quot;&gt;
+  =&gt;&#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; action=&quot;box_proc.jsp&#xB85C; (&#xC804;&#xC1A1; X)
+  =&gt;document.&#xD3FC;&#xAC1D;&#xCCB4;&#xBA85;.submit()&#xC744; &#xAF2D; &#xC368;&#xC918;&#xC57C; &#xB41C;&#xB2E4;.
+
+&lt;a href=&quot;JavaScript:&#xD638;&#xCD9C;&#xD560; &#xD568;&#xC218;&#xBA85;(~)&quot;&gt;&#xD45C;&#xB9CC;&#xB4E4;&#xAE30;&lt;/a&gt;
+=&gt;&#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; action=&quot;box_proc.jsp&#xB85C;  (&#xC804;&#xC1A1; X)
+  =&gt;document.&#xD3FC;&#xAC1D;&#xCCB4;&#xBA85;.submit()&#xC744; &#xAF2D; &#xC368;&#xC918;&#xC57C; &#xB41C;&#xB2E4;.
+*********
+
+
+&#xC6F9;&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;=&gt;******&#xD398;&#xC774;&#xC9C0; &#xC774;&#xB3D9;&#xC2DC;&#xD0A4;&#xB294; &#xBC29;&#xBC95;(jsp)******* =&gt;&#xAE30;&#xC220; &#xBA74;&#xC811;
+                  =&gt;&#xC624;&#xB77C;&#xD074;-&gt;join,subQuery(&#xC2E4;&#xC2B5;)
+
+
+1.response&#xAC1D;&#xCCB4;-&gt;
+
+                                    -&gt;http:// &#xBC18;&#xB4DC;&#xC2DC; &#xC904;&#xAC83;
+ //response.sendRedirect(&quot;http://www.chosun.com&quot;);  &#xC678;&#xBD80;&#xC758; &#xC0AC;&#xC774;&#xD2B8;&#xB85C; &#xC774;&#xB3D9;
+     response.sendRedirect(&quot;./req.jsp&quot;); //&#xC0C1;&#xB300;&#xACBD;&#xB85C;&#xB97C; &#xC9C0;&#xC815;(&#xB0B4;&#xBD80; &#xD30C;&#xC77C;&#xC774;&#xB3D9;)
+    =&gt;**URL&#xCC3D;&#xC774; &#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC804;&#xD658;&#xC774; &#xB418;&#xBA74;&#xC11C; &#xC774;&#xB3D9;&#xC774; &#xB41C;&#xB2E4;.
+    =&gt;&#xB370;&#xC774;&#xD130;&#xB97C; &#xC11C;&#xB85C; &#xACF5;&#xC720;&#xD560; &#xC218;&#xC5C6;&#xB2E4;.
+
+2.forward&#xC561;&#xC158;&#xD0DC;&#xADF8;==&gt;&#xBAA8;&#xB378;2&#xC758; &#xD575;&#xC2EC;
+    =&gt;&#xC678;&#xBD80;&#xC758; &#xC0AC;&#xC774;&#xD2B8;&#xB85C; &#xC774;&#xB3D9;X
+    =&gt;&#xC790;&#xAE30; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xB2E4;&#xB978; &#xD398;&#xC774;&#xC9C0;&#xB85C;&#xB9CC; &#xC774;&#xB3D9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.(O)
+    =&gt;**URL&#xCC3D;&#xC774; &#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC804;&#xD658;&#xC774; X **
+    &#xACB0;&#xB860;) &#xB370;&#xC774;&#xD130;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xBA74;&#xC11C; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC774;&#xB3D9;&#xC2DC;&#xD0AC; &#xC218; &#xAC00; &#xC788;&#xB2E4;.
+
+&#xD68C;&#xC6D0;&#xB85C;&#xADF8;&#xC778;-&gt;&#xC608;&#xB9E4;&#xD398;&#xC774;&#xC9C0; 1--&gt;&#xC608;&#xB9E4;&#xD398;&#xC774;&#xC9C0; 2---&gt;&#xC608;&#xB9E4;&#xD398;&#xC774;&#xC9C0; 3
+                    &#xC9C0;&#xC5ED;                 &#xC0C1;&#xC601;&#xAD00; &#xC2DC;&#xAC04;        &#xCE74;&#xB4DC;,&#xBB34;&#xD1B5;&#xC7A5;&#xC785;&#xAE08;
+
+ &#xC6F9;-&gt;&#xD398;&#xC774;&#xC9C0;&#xC774;&#xB3D9;&#xD558;&#xBA74; &#xC804;&#xC758; &#xC815;&#xBCF4;&#xAC00; &#xC0AC;&#xB77C;&#xC9C4;&#xB2E4;.=&gt;&#xC138;&#xC158;&#xCC98;&#xB9AC;
+
+  A.jsp=&gt;B.jsp=&gt;C.jsp
+ int su=100
+
+3.&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;-&gt;location.href=&quot;&#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xBA85;&quot;
+                        location.replace(&quot;http://~&#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xBA85;&quot;)
+                        history.back()-&gt;&#xC804;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
+                        history.go(-1)-&gt;&#xC804;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
+                        history.forward()-&gt;&#xC55E;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
+
+
+
+
+*****
+include&#xC561;&#xC158;&#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;(X) or (O)
+include&#xC9C0;&#xC2DC;&#xC5B4;&#xC758; &#xCC28;&#xC774;&#xC810;
+
+&#xACF5;&#xD1B5;&#xC810;-&gt;&#xB458;&#xB2E4; &#xC678;&#xBD80;&#xC758; &#xD30C;&#xC77C;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xBD88;&#xB7EC;&#xC640;&#xC11C; &#xD2B9;&#xC815;&#xD55C; &#xC704;&#xCE58;&#xC5D0; &#xC0BD;&#xC785;&#xD55C;&#xB2E4;.
+&#xCC28;&#xC774;&#xC810;-&gt;include &#xC561;&#xC158;&#xD0DC;&#xADF8;=&gt;&#xB3D9;&#xC801;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB41C; &#xB0B4;&#xC6A9;&#xC744; &#xD2B9;&#xC815;&#xD55C; &#xC704;&#xCE58;&#xC5D0; &#xC0BD;&#xC785;
+                                    =&gt;angular or react (&#xC0C8;&#xB85C; &#xACE0;&#xCE68; F5)
+
+            include &#xC9C0;&#xC2DC;&#xC5B4;-&gt;&#xC815;&#xC801;&#xC73C;&#xB85C; &#xBB38;&#xC790;&#xC5F4;&#xB9CC; &#xBCF5;&#xC0AC;-&gt;&#xD2B9;&#xC815;&#xD55C; &#xC704;&#xCE58;&#xC5D0; &#xC0BD;&#xC785;
+
+</pre>
+<h2>4일차</h2>
+<pre class="language-">
+ ********&#xC790;&#xBC14;&#xBE48;&#xC988; 3&#xAC00;&#xC9C0;********
+
+1.&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;-&gt;useBean &#xD0DC;&#xADF8;
+
+ //BeanTest bt=new BeanTest();
+&lt;jsp:useBean id=&quot;&#xAC1D;&#xCCB4;&#xBA85;&quot;  class=&quot;&#xD328;&#xD0A4;&#xC9C0;&#xBA85;.&#xD074;&#xB798;&#xC2A4;&#xBA85;&quot;  scope=&quot;&#xC0AC;&#xC6A9;&#xBC94;&#xC704;&quot; /&gt;
+* page-&gt;&#xD604;&#xC7AC; jsp&#xB0B4;&#xC5D0;&#xC11C;&#xB9CC;(default)
+* request-&gt;&#xD55C;&#xD398;&#xC774;&#xC9C0; &#xC774;&#xC0C1;
+* session-&gt;&#xB85C;&#xADF8;&#xC778;&#xD55C; &#xB3D9;&#xC548;
+* application-&gt;&#xBAA8;&#xB4E0; &#xD398;&#xC774;&#xC9C0;
+
+&lt;jsp:useBean id=&quot;bt&quot; class=&quot;test.BeanTest&quot; scope=&quot;page&quot; /&gt;
+
+2. -&gt;Setter &#xD638;&#xCD9C;
+
+&#xD615;&#xC2DD;) &lt;jsp:setProperty name=&quot;&#xAC1D;&#xCCB4;&#xBA85;&quot; property=&quot;&#xBA64;&#xBC84;&#xBCC0;&#xC218;&#xBA85;(str)&quot; value=&quot;&#xC800;&#xC7A5;&#xD560;&#xAC12;&quot; /&gt;
+  &lt;jsp:setProperty name=&quot;bt&quot; property=&quot;str&quot;  value=&quot;&lt;%=&#xBCC0;&#xC218;&#xBA85;%&gt;&quot; /&gt;
+
+3.Getter Method&#xB97C; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xD0DC;&#xADF8;
+&lt;%=bt.getStr() %&gt;
+&#xD615;&#xC2DD;)
+&lt;jsp:getProperty name=&quot;&#xAC1D;&#xCCB4;&#xBA85; &quot; property=&quot;&#xBA64;&#xBC84;&#xBCC0;&#xC218;&#xBA85;&quot; /&gt;
+ &lt;jsp:getProperty name=&quot;bt &quot; property=&quot;str&quot; /&gt;
+</pre>
+<h2>5일차</h2>
+<pre class="language-">**
+&#xCFE0;&#xD0A4;&#xC640; &#xC138;&#xC158;&#xC758; &#xACF5;&#xD1B5;&#xC810;-&gt;&#xB458;&#xB2E4; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;
+&#xC11C;&#xBC84;&#xC640;&#xC758; &#xC5F0;&#xACB0;&#xC744; &#xC77C;&#xC815;&#xC2DC;&#xAC04;&#xB3D9;&#xC548;
+&#xC720;&#xC9C0;&#xC2DC;&#xCF1C;&#xC8FC;&#xB294; &#xBC29;&#xBC95;(&#xB85C;&#xADF8;&#xC778;)
+
+&#xCFE0;&#xD0A4;-&gt;&#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;-&gt;&#xD574;&#xD0B9;&#xC758; &#xC18C;&#xC9C0;,&#xAC1C;&#xC778;&#xC815;&#xBCF4; &#xC720;&#xCD9C;-&gt;&#xC798; &#xC0AC;&#xC6A9;X
+&#xC138;&#xC158;-&gt;&#xC11C;&#xBC84;&#xC758; &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0; &#xC800;&#xC7A5;-&gt;30&#xBD84;(default)&#xC720;&#xC9C0;-&gt;30&#xBD84;&#xD6C4; &#xC790;&#xB3D9; &#xC885;&#xB8CC;
+**
+
+******************************
+1.Java Application&#xC758; DB&#xC5F0;&#xB3D9;&#xBC29;&#xBC95;(JDBC)
+
+ 1)&#xC811;&#xC18D; ojdbc6.jar-&gt;C:\jdk1.8\jre\lib\ext=&gt;&#xBCF5;&#xC0AC;&#xB97C; &#xD560;&#xAC83;(&#xC804;&#xC5ED;)=&gt;&#xCD94;&#xAC00;&#xC801;&#xC778; &#xC791;&#xC5C5;
+
+  -&gt;&#xC774;&#xD074;&#xB9BD;&#xC2A4;&#xC5D0;&#xC11C; &#xACBD;&#xB85C;&#xB97C; &#xC9C0;&#xC815; ojdbc6.jar&#xB97C; &#xBD88;&#xB7EC;&#xC624;&#xAE30;
+
+  -&gt;&#xB2E4;&#xB978; &#xACBD;&#xB85C;&#xC5D0; ojdbc6.jar&#xB97C; &#xBCF5;&#xC0AC;-&gt;classpath&#xD658;&#xACBD;&#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;-&gt;&#xADF8; &#xACBD;&#xB85C;&#xC9C0;&#xC815;
+     (&#xC9C0;&#xC5ED;)
+
+2.Web Application&#xC758; DB&#xC5F0;&#xB3D9;&#xBC29;&#xBC95;=&gt;
+
+       1)Tomcat8.5.x\lib\ &#xC811;&#xC18D; &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xB97C; &#xBCF5;&#xC0AC;
+                                      ojdbc6.jar (&#xC804;&#xC5ED;)
+       2)JspMember
+                |
+                 -WebContent
+                         |
+                          -WEB-INF
+                                 |
+                                   -lib-&gt;ojdbc6.jar (&#xC9C0;&#xC5ED;)
+                                            my~.jar
+
+     -&gt;&#xC774;&#xD074;&#xB9BD;&#xC2A4;&#xC5D0;&#xC11C; &#xACBD;&#xB85C;&#xB97C; &#xC9C0;&#xC815; ojdbc6.jar&#xB97C; &#xBD88;&#xB7EC;&#xC624;&#xAE30;
+----------------------------------------------------
+*******************************
+</pre>
+<h2>6일차</h2>
+<pre class="language-">**&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xBC29;&#xBC95;**
+
+1.Login.jsp-&gt;LoginProc.jsp
+
+2.&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xD568;&#xC218;---&gt;&#xD2B9;&#xC815; jsp&#xB85C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACBD;&#xC6B0;
+------------&gt; &#xD504;&#xB9B0;&#xD2B8; &#xD588;&#xC74C;
+</pre>
+<h2>8일차</h2>
+<pre class="language-">*****&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xBC29;&#xBC95;****(&#xAE30;&#xC220;&#xBA74;&#xC811;&#xC2DC;)
+*************************************
+
+1.&#xB9C1;&#xD06C;&#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xD398;&#xC774;&#xC9C0; &#xC804;&#xD658;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;
+ &lt;a href=&quot;DelCheckForm.jsp?mem_id=&lt;%=mem_id%&gt;&quot;&gt;&#xD68C;&#xC6D0;&#xD0C8;&#xD1F4;&lt;/a&gt;
+
+2.Request&#xAC1D;&#xCCB4; &#xB610;&#xB294; Session&#xAC1D;&#xCCB4;&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xB370;&#xC774;&#xD130; &#xACF5;&#xC720;&#xBC29;&#xBC95;
+&lt;a href=&quot;MemberUpdate.jsp&quot;&gt;&#xD68C;&#xC6D0;&#xC218;&#xC815;&lt;/a&gt;
+ =&gt;String mem_id=(String)session.getAttribute(&quot;idKey&quot;)
+
+3.&lt;form&gt;&#xD0DC;&#xADF8;&#xB0B4;&#xBD80;&#xC5D0; &lt;input type=&quot;hidden&quot;~&gt;&#xAC12;&#xC744; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACBD;&#xC6B0;
+   &#xD615;&#xC2DD;) &lt;input type=&quot;hidden&quot; name=&quot;&#xC804;&#xB2EC;&#xD560;&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xBA85;&quot; value=&quot;&#xC804;&#xB2EC;&#xD560;&#xAC12;&quot;&gt;
+ex)&lt;input type=&quot;hidden&quot; name=&quot;mem_id&quot; value=&quot;&lt;%=mem_id%&gt;&quot; &gt;
+
+  &lt;input type=&quot;hidden&quot; name=&quot;mem_id&quot; value=&quot;&lt;%=mem_id%&gt;&quot; &gt;
+    &#xB300;&#xC2E0;&#xC5D0; action&#xC18D;&#xC131;&#xAC12;&#xC5D0;
+     action=&quot;&#xC774;&#xB3D9;&#xD560;&#xD398;&#xC774;&#xC9C0;&#xBA85;?&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xBA85;=&#xC804;&#xB2EC;&#xD560;&#xAC12;&amp;&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xBA85;2=&#xAC12;2,,,
+4.action=&quot;delePro.jsp?mem_id=&lt;%=mem_id%&gt;
+</pre>
+<h2>9일차</h2>
+<pre class="language-">
+1.show databases;==&gt;&#xD604;&#xC7AC; &#xC5B4;&#xB5A4; &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4; &#xBAA9;&#xB85D;&#xD655;&#xC778;
+
+mysql&gt;show databases; //&#xD0D0;&#xC0C9;&#xAE30;&#xC758; &#xD3F4;&#xB354;&#xCC98;&#xB7FC; &#xC0DD;&#xAC01;
+
+2.&#xD2B9;&#xC815; DB&#xC5D0; &#xC811;&#xC18D;-&gt;&#xB4E4;&#xC5B4;&#xAC00;&#xACE0; &#xC2F6;&#xB2E4;.
+ use &#xC804;&#xD658;&#xD560; DB&#xBA85;
+
+mysql&gt; use mysql;  //DB&#xC5D0;&#xB294; &#xD14C;&#xC774;&#xBE14;&#xC774; &#xB4E4;&#xC5B4;&#xC788;&#xB2E4;.
+Database changed
+
+3.DB&#xC5D0; &#xB4E4;&#xC5B4;&#xAC00; &#xC788;&#xB294; &#xD14C;&#xC774;&#xBE14;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xC138;&#xC694;(&#xBAA9;&#xB85D;)
+mysql&gt;show tables;
+
+mysql&gt; show tables;
+
+4.desc user; //&#xAD6C;&#xC870;&#xD655;&#xC778;
+5.select * from user;
+---------------------------
+mysql&gt;exit-&gt;&#xC885;&#xB8CC;
+---------------------------
+SQLGate for Mysql-&gt;30&#xC77C;
+
+&#xC720;&#xC800;&#xBA85;:root
+&#xD328;&#xC2A4;&#xC6CC;&#xB4DC;:1234
+&#xC11C;&#xBC84;:localhost
+&#xD3EC;&#xD2B8;:3306------&gt;3307
+&#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;:mysql -&gt;&#xCC98;&#xC74C;&#xC5D0;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xB294; DB&#xC5D0; &#xC811;&#xC18D;
+**&#xCE90;&#xB9AD;&#xD130;&#xC14B;:utf8
+**&#xC720;&#xB2C8;&#xCF54;&#xB4DC; &#xC0AC;&#xC6A9;-&gt;&#xBC18;&#xB4DC;&#xC2DC; &#xCCB4;&#xD06C;&#xD560;&#xAC83;-&gt;&#xD55C;&#xAE00;&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;
+  &#xC5F0;&#xACB0;&#xD14C;&#xC2A4;&#xD2B8;-&gt;&#xC811;&#xC18D;&#xC131;&#xACF5;
+</pre>
+<h2>11일차</h2>
+<pre class="language-">***&#xB2E4;&#xC591;&#xD55C;&#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACBD;&#xC6B0;***
+------------------------------------------------------------------------------------                 
+action=&quot;updatePro.jsp?num=&lt;%=num%&gt;&amp;pageNum=&lt;%=pageNum%&gt;&quot;
+---------------------------------------------------------------------------------
+action=&quot;updatePro.jsp&quot;
+
+&lt;input type=&quot;hidden&quot; name=&quot;num&quot; value=&quot;&lt;%=num%&gt;&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;pageNum&quot; value=&quot;&lt;%=pageNum%&gt;&quot;&gt;
+</pre>
+
+    </body>
+    
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+  </html>
