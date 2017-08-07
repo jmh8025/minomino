@@ -127,3 +127,54 @@ $('input').keyup(function(){
 ```javascript
 $(대상).text(넣고싶은문장)
 ```
+
+---
+
+08change.html
+-------------
+
+#### 셀렉문이 바뀔때마다
+
+```javascript
+$('#셀렉문').change(function(){
+이벤트 구문
+})
+```
+
+---
+
+09formevent.html
+----------------
+
+#### 커서가 들어갔을때 (focus)
+
+```javascript
+$('input').focus(function(){
+
+	})
+```
+
+#### 커서를 벗어났을때
+
+```javascript
+$('input').blur(function(){
+
+    })
+```
+
+#### ul안에다가 삽입
+
+```javascript
+var new_line=$('<li>'+$('#data').val()+'</li>')
+		$('#disp').append(new_line)
+event.preventDefault();//전송을 하지 못하게 설정
+```
+
+cf) 이벤트 동작정지 함수들
+
+| 함수명                           | 설명                                                                                                                |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| event.preventDefault()           | 현재 이벤트의 기본 동작을 중단한다.                                                                                 |
+| event.stopPropagation()          | 현재 이벤트가 상위로 전파되지 않도록 중단한다.                                                                      |
+| event.stopImmediatePropagation() | 현재 이벤트가 상위뿐 아니라 현재 레벨에 걸린 다른 이벤트도 동작하지 않도록 중단한다.                                |
+| return false                     | jQuery를 사용할 때는 위의 두개 모두를 수행한 것과 같고, jQuery를 사용하지 않을 때는 event.preventDefault() 와 같다. |
