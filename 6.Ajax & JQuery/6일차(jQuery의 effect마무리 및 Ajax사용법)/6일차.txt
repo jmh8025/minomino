@@ -1,0 +1,1 @@
+6일차(jQuery의 effect마무리 및 Ajax사용법)

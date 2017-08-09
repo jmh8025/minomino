@@ -178,3 +178,10 @@ cf) 이벤트 동작정지 함수들
 | event.stopPropagation()          | 현재 이벤트가 상위로 전파되지 않도록 중단한다.                                                                      |
 | event.stopImmediatePropagation() | 현재 이벤트가 상위뿐 아니라 현재 레벨에 걸린 다른 이벤트도 동작하지 않도록 중단한다.                                |
 | return false                     | jQuery를 사용할 때는 위의 두개 모두를 수행한 것과 같고, jQuery를 사용하지 않을 때는 event.preventDefault() 와 같다. |
+
+---
+
+10input.html
+------------
+
+j
