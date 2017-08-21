@@ -292,5 +292,3 @@ public String requestPro(HttpServletRequest request, HttpServletResponse respons
 
 }
 ```
-
-왜 인터페이스로 할까 ? 내일 설명해주심

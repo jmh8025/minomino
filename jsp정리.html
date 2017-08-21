@@ -6,303 +6,555 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
       <link rel="stylesheet" href="file:///C:\Users\kitcoop\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
-      
+      <link rel="stylesheet" href="file:///C:\Users\kitcoop\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\mermaid\mermaid.css">
 
       
+      <script type="text/javascript" src="file:///C:\Users\kitcoop\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\mermaid\mermaid.min.js"></script>
       
 
       <style> 
-      pre{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;padding:1em;margin:.5em 0;overflow:auto;line-height:1.5;tab-size:4;hyphens:none;color:#383a42;background-color:#eaeaeb !important;border:#d1d1d2;border-radius:3px}code[class*="language-"] .token.comment,pre[class*="language-"] .token.comment,code[class*="language-"] .token.prolog,pre[class*="language-"] .token.prolog,code[class*="language-"] .token.doctype,pre[class*="language-"] .token.doctype,code[class*="language-"] .token.cdata,pre[class*="language-"] .token.cdata{color:#a0a1a7}code[class*="language-"] .namespace,pre[class*="language-"] .namespace{opacity:.7}code[class*="language-"] .token.constant,pre[class*="language-"] .token.constant{color:#986801}code[class*="language-"] .token.boolean,pre[class*="language-"] .token.boolean,code[class*="language-"] .token.number,pre[class*="language-"] .token.number,code[class*="language-"] .token.function-name,pre[class*="language-"] .token.function-name{color:#986801}code[class*="language-"] .token.tag,pre[class*="language-"] .token.tag{color:#e45649}code[class*="language-"] .token.symbol,pre[class*="language-"] .token.symbol{color:#0184bc}code[class*="language-"] .token.selector,pre[class*="language-"] .token.selector{color:#a626a4}code[class*="language-"] .token.attr-name,pre[class*="language-"] .token.attr-name{color:#986801}code[class*="language-"] .token.string,pre[class*="language-"] .token.string{color:#50a14f}code[class*="language-"] .token.char,pre[class*="language-"] .token.char{color:#0184bc}code[class*="language-"] .token.url,pre[class*="language-"] .token.url{color:#0184bc}code[class*="language-"] .token.operator,pre[class*="language-"] .token.operator{color:#383a42}code[class*="language-"] .token.atrule,pre[class*="language-"] .token.atrule,code[class*="language-"] .token.attr-value,pre[class*="language-"] .token.attr-value,code[class*="language-"] .token.keyword,pre[class*="language-"] .token.keyword{color:#a626a4}code[class*="language-"] .token.function,pre[class*="language-"] .token.function{color:#4078f2}code[class*="language-"] .token.class-name,pre[class*="language-"] .token.class-name{color:#c18401}code[class*="language-"] .token.variable,pre[class*="language-"] .token.variable{color:#986801}code[class*="language-"] .token.regex,pre[class*="language-"] .token.regex{color:#0184bc}code[class*="language-"] .token.important,pre[class*="language-"] .token.important{color:#e45649}code[class*="language-"] .token.important,pre[class*="language-"] .token.important,code[class*="language-"] .token.bold,pre[class*="language-"] .token.bold{font-weight:bold}code[class*="language-"] .token.italic,pre[class*="language-"] .token.italic{font-style:italic}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{cursor:help}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#383a42;background-color:#fafafa;overflow:initial;padding:2em;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5e616e}html body strong{color:#000}html body del{color:#5e616e}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#0184bc;text-decoration:none}html body a:hover{color:#01a0e5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5e616e;border-left:4px solid #d1d1d2}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d1d1d2;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d1d1d2;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#eaeaeb;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d1d1d2;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d1d1d2;border-bottom:2px solid #c1c1c2;padding:2px 4px;background-color:#eaeaeb;border-radius:3px}@media print{html body{background-color:#fafafa}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5e616e}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}@media screen and (min-width:914px){html body:not([data-presentation-mode]){width:980px;margin:10px auto}}@media screen and (max-width:400px){html body:not([data-presentation-mode]){font-size:14px;margin:0 auto;padding:15px}}html body .pagebreak,html body .newpage{page-break-before:always}html body pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}html body pre.line-numbers>code{position:relative}html body pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html body pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}html body pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}html body .mathjax-exps .MathJax_Display{text-align:center !important}html body:not([for="preview"]) .code-chunk .btn-group{display:none}html body:not([for="preview"]) .code-chunk .status{display:none}html body:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px} 
+      pre{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;padding:1em;margin:.5em 0;overflow:auto;line-height:1.5;tab-size:4;hyphens:none;color:#383a42;background-color:#eaeaeb !important;border:#d1d1d2;border-radius:3px}code[class*="language-"] .token.comment,pre[class*="language-"] .token.comment,code[class*="language-"] .token.prolog,pre[class*="language-"] .token.prolog,code[class*="language-"] .token.doctype,pre[class*="language-"] .token.doctype,code[class*="language-"] .token.cdata,pre[class*="language-"] .token.cdata{color:#a0a1a7}code[class*="language-"] .namespace,pre[class*="language-"] .namespace{opacity:.7}code[class*="language-"] .token.constant,pre[class*="language-"] .token.constant{color:#986801}code[class*="language-"] .token.boolean,pre[class*="language-"] .token.boolean,code[class*="language-"] .token.number,pre[class*="language-"] .token.number,code[class*="language-"] .token.function-name,pre[class*="language-"] .token.function-name{color:#986801}code[class*="language-"] .token.tag,pre[class*="language-"] .token.tag{color:#e45649}code[class*="language-"] .token.symbol,pre[class*="language-"] .token.symbol{color:#0184bc}code[class*="language-"] .token.selector,pre[class*="language-"] .token.selector{color:#a626a4}code[class*="language-"] .token.attr-name,pre[class*="language-"] .token.attr-name{color:#986801}code[class*="language-"] .token.string,pre[class*="language-"] .token.string{color:#50a14f}code[class*="language-"] .token.char,pre[class*="language-"] .token.char{color:#0184bc}code[class*="language-"] .token.url,pre[class*="language-"] .token.url{color:#0184bc}code[class*="language-"] .token.operator,pre[class*="language-"] .token.operator{color:#383a42}code[class*="language-"] .token.atrule,pre[class*="language-"] .token.atrule,code[class*="language-"] .token.attr-value,pre[class*="language-"] .token.attr-value,code[class*="language-"] .token.keyword,pre[class*="language-"] .token.keyword{color:#a626a4}code[class*="language-"] .token.function,pre[class*="language-"] .token.function{color:#4078f2}code[class*="language-"] .token.class-name,pre[class*="language-"] .token.class-name{color:#c18401}code[class*="language-"] .token.variable,pre[class*="language-"] .token.variable{color:#986801}code[class*="language-"] .token.regex,pre[class*="language-"] .token.regex{color:#0184bc}code[class*="language-"] .token.important,pre[class*="language-"] .token.important{color:#e45649}code[class*="language-"] .token.important,pre[class*="language-"] .token.important,code[class*="language-"] .token.bold,pre[class*="language-"] .token.bold{font-weight:bold}code[class*="language-"] .token.italic,pre[class*="language-"] .token.italic{font-style:italic}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{cursor:help}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#383a42;background-color:#fafafa;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5e616e}html body strong{color:#000}html body del{color:#5e616e}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#0184bc;text-decoration:none}html body a:hover{color:#01a0e5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5e616e;border-left:4px solid #d1d1d2}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d1d1d2;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d1d1d2;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#eaeaeb;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d1d1d2;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d1d1d2;border-bottom:2px solid #c1c1c2;padding:2px 4px;background-color:#eaeaeb;border-radius:3px}@media print{html body{background-color:#fafafa}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5e616e}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]{position:absolute;width:100%;height:100%;top:0;left:0;margin:0;padding:0}@media screen and (min-width:914px){html body[for="html-export"] .markdown-preview:not([data-presentation-mode]){width:980px;margin:10px auto;padding:0 2em}}@media screen and (max-width:914px){html body[for="html-export"] .markdown-preview:not([data-presentation-mode]){margin:0 auto;padding:0 2em}}@media screen and (max-width:450px){html body[for="html-export"] .markdown-preview:not([data-presentation-mode]){font-size:14px !important;margin:0 auto;padding:0 1em}}@media print{html body[for="html-export"] #sidebar-toc-btn{display:none}}html body[for="html-export"] #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.6}html body[for="html-export"][html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:268px;height:100%;padding:32px 0 48px 0;overflow:auto;font-size:14px;box-shadow:4px 0 12px rgba(150,150,150,0.33);box-sizing:border-box}html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"][html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"][html-show-sidebar-toc] .markdown-preview{position:relative;left:268px;max-width:980px;width:calc(100% - 268px);margin:0;padding:0 2em;box-sizing:border-box}html body[for="html-export"]:not([html-show-sidebar-toc]) .md-sidebar-toc{display:none} 
        
       </style>
     </head>
-    <body class="mume   ">
-    <h2>1일차</h2>
-<pre class="language-">**Jsp&#xD398;&#xC774;&#xC9C0;&#xC758; &#xAD6C;&#xC131;&#xC694;&#xC18C;**
+    <body for="html-export">
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A6%BF-%EC%9B%B9%EC%83%81%EC%97%90%EC%84%9C-%EC%9E%90%EB%B0%94%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8F%84%EB%A1%9D-%ED%95%B4%EC%A3%BC%EB%8A%94-%EC%98%81%EC%97%AD">스크립트릿 : 웹상에서 자바코드를 사용할 수 있도록 해주는 영역</a></li>
+<li><a href="#%ED%91%9C%ED%98%84%EC%8B%9Dexpression-%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%EB%AC%B8-%EB%8C%80%EC%9A%A9%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9">표현식(expression) : 간단하게 출력문 대용으로 사용</a></li>
+<li><a href="#%EC%84%A0%EC%96%B8%EB%AC%B8declaration">선언문(Declaration)</a></li>
+<li><a href="#%EC%A3%BC%EC%84%9D">주석</a></li>
+<li><a href="#%ED%95%9C%EA%B8%80%EC%B2%98%EB%A6%AC">한글처리</a></li>
+<li><a href="#%EC%84%9C%EB%B8%94%EB%A6%BF%EC%9D%98-%EC%A1%B0%EA%B1%B4">서블릿의 조건</a></li>
+<li><a href="#%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC">페이지 이동에 관하여..!</a>
+<ul>
+<li><a href="#1-reponse-%EA%B0%9D%EC%B2%B4">1. reponse 객체</a></li>
+<li><a href="#2-forward-%EC%95%A1%EC%85%98%ED%83%9C%EA%B7%B8">2. forward 액션태그</a></li>
+<li><a href="#3-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8">3. 자바스크립트</a></li>
+</ul>
+</li>
+<li><a href="#%EC%95%A1%EC%85%98%ED%83%9C%EA%B7%B8%EC%9D%98-%EC%A2%85%EB%A5%98">액션태그의 종류</a></li>
+<li><a href="#%EC%9E%90%EB%B0%94%EB%B9%88%EC%A6%88%EC%9D%98-3%EA%B0%80%EC%A7%80">자바빈즈의 3가지</a>
+<ul>
+<li><a href="#1-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%83%9D%EC%84%B1-usebean-%ED%83%9C%EA%B7%B8">1. 객체를 생성-&gt;useBean 태그</a></li>
+<li><a href="#2-setter-%ED%98%B8%EC%B6%9C">2. -&gt;Setter 호출</a></li>
+<li><a href="#3getter-method%EB%A5%BC-%EB%8C%80%EC%8B%A0-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%ED%83%9C%EA%B7%B8">3.Getter Method를 대신 사용할 수 있는 태그</a></li>
+</ul>
+</li>
+<li><a href="#%EC%BF%A0%ED%82%A4%EC%99%80-%EC%84%B8%EC%85%98">쿠키와 세션</a>
+<ul>
+<li><a href="#%EA%B3%B5%ED%86%B5%EC%A0%90">공통점</a></li>
+<li><a href="#%EC%B0%A8%EC%9D%B4%EC%A0%90">차이점</a></li>
+</ul>
+</li>
+<li><a href="#db%EC%97%B0%EB%8F%99-%EB%B0%A9%EB%B2%95">DB연동 방법</a></li>
+<li><a href="#3-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EB%A5%BC-%EC%A0%84%EB%8B%AC%ED%95%98%EA%B8%B0%EC%9C%84%ED%95%9C-4%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95">3. 매개변수를 전달하기위한 4가지 방법</a>
+<ul>
+<li><a href="#%E1%84%80-%EB%A7%81%ED%81%AC%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%B4%EC%84%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%84%ED%99%98%ED%95%A0%EB%95%8C-%EC%82%AC%EC%9A%A9">ㄱ. 링크문자열을 이용해서 페이지 전환할때 사용</a></li>
+<li><a href="#%E1%84%82-rrequest%EA%B0%9D%EC%B2%B4-%EB%98%90%EB%8A%94-session%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B3%B5%EC%9C%A0%EB%B0%A9%EB%B2%95">ㄴ. Rrequest객체 또는 Session객체를 이용한 데이터 공유방법</a></li>
+<li><a href="#%E1%84%83-form%ED%83%9C%EA%B7%B8-%EB%82%B4%EB%B6%80%EC%97%90-input-typehidden-~%EA%B0%92%EC%9D%84-%EC%A0%84%EB%8B%AC%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0">ㄷ. &lt;form&gt;태그 내부에 &lt;input type=&quot;hidden&quot; ~&gt;값을 전달하는 경우</a></li>
+<li><a href="#%E1%84%85-actiondeleprojspmem_idmem_id">ㄹ. action=&quot;delePro.jsp?mem_id=&lt;%=mem_id%&gt;</a></li>
+</ul>
+</li>
+<li><a href="#%EA%B8%80%EB%AA%A9%EB%A1%9D%EB%B3%B4%EA%B8%B0">글목록보기</a>
+<ul>
+<li><a href="#1-mysql-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%B6%94%EA%B0%80">1. mysql 라이브러리 추가</a></li>
+</ul>
+</li>
+<li><a href="#%EA%B8%80%EC%93%B0%EA%B8%B0">글쓰기</a></li>
+<li><a href="#%EB%8B%A4%EC%96%91%ED%95%9C%EB%B0%A9%EB%B2%95%EC%9C%BC%EB%A1%9C-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EB%A5%BC-%EC%A0%84%EB%8B%AC%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0">다양한방법으로 매개변수를 전달하는 경우</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+      <div class="mume markdown-preview   ">
+      <h2>1일차</h2>
+<h4 class="mume-header" id="&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB9BF;-&#xC6F9;&#xC0C1;&#xC5D0;&#xC11C;-&#xC790;&#xBC14;&#xCF54;&#xB4DC;&#xB97C;-&#xC0AC;&#xC6A9;&#xD560;-&#xC218;-&#xC788;&#xB3C4;&#xB85D;-&#xD574;&#xC8FC;&#xB294;-&#xC601;&#xC5ED;">스크립트릿 : 웹상에서 자바코드를 사용할 수 있도록 해주는 영역</h4>
 
- &#xC6F9;&#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC694;&#xCCAD;(request)--------------------&gt;
-   &#xB9C1;&#xD06C;&#xBB38;&#xC790;&#xC5F4; &#xD074;&#xB9AD;,&#xBC84;&#xD2BC;&#xD074;&#xB9AD;,url
-                         html&#xBB38;&#xC11C;&lt;--------------------&#xC751;&#xB2F5;(response)
+<ul>
+<li>
+<p>&lt;% ~ %&gt; =&gt; 태그사용X(자바스크립트 X)</p>
+</li>
+<li>
+<p>표현식도 사용불가합니다!</p>
+</li>
+</ul>
+<h4 class="mume-header" id="&#xD45C;&#xD604;&#xC2DD;expression-&#xAC04;&#xB2E8;&#xD558;&#xAC8C;-&#xCD9C;&#xB825;&#xBB38;-&#xB300;&#xC6A9;&#xC73C;&#xB85C;-&#xC0AC;&#xC6A9;">표현식(expression) : 간단하게 출력문 대용으로 사용</h4>
 
-1.&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB9BF;-&gt;&#xC6F9;&#xC0C1;&#xC5D0;&#xC11C; &#xC790;&#xBC14;&#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD574;&#xC8FC;&#xB294; &#xC601;&#xC5ED;
-                  &lt;% ~  %&gt; =&gt;&#xD0DC;&#xADF8;&#xC0AC;&#xC6A9;X(&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; X)
-                                         &#xD45C;&#xD604;&#xC2DD;&#xB3C4; &#xC0AC;&#xC6A9;&#xBD88;&#xAC00;
+<ul>
+<li>
+<p>변수값 출력,메소드 호출(결과값을 출력)</p>
+</li>
+<li>
+<p>형식) &lt;%=변수명%&gt; or &lt;%=객체명.일반메소드명(~)%&gt;</p>
+</li>
+<li>
+<p>&lt;%=정적메소드명(~)%&gt;</p>
+</li>
+</ul>
+<h4 class="mume-header" id="&#xC120;&#xC5B8;&#xBB38;declaration">선언문(Declaration)</h4>
 
-  http://localhost:8090/JspStudy/abc/imsi.jsp
-                                               =
-                                            WebContent
+<ul>
+<li>
+<p>스크립트릿과 모양이 유사하다.</p>
+</li>
+<li>
+<p>&lt;%! ~ %&gt;</p>
+</li>
+<li>
+<p>선언된 위치에 상관없이 변수를 불러다가 사용이 가능하다(변수선언)</p>
+</li>
+<li>
+<p>메소드 장석이 가능하다(정적 메소드 느낌)</p>
+</li>
+</ul>
+<h4 class="mume-header" id="&#xC8FC;&#xC11D;">주석</h4>
 
-2.&#xD45C;&#xD604;&#xC2DD;(expression)-&gt;&#xAC04;&#xB2E8;&#xD558;&#xAC8C; &#xCD9C;&#xB825;&#xBB38; &#xB300;&#xC6A9;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;
-                                &#xBCC0;&#xC218;&#xAC12; &#xCD9C;&#xB825;,&#xBA54;&#xC11C;&#xB4DC;&#xD638;&#xCD9C;-&gt;&#xACB0;&#xACFC;&#xAC12;&#xC744; &#xCD9C;&#xB825;
-
- &#xD615;&#xC2DD;) &lt;%=&#xBCC0;&#xC218;&#xBA85;%&gt; or &lt;%=&#xAC1D;&#xCCB4;&#xBA85;.&#xC77C;&#xBC18;&#xBA54;&#xC11C;&#xB4DC;&#xBA85;(~)%&gt;
-                                     &lt;%=&#xC815;&#xC801;&#xBA54;&#xC11C;&#xB4DC;&#xBA85;(~)%&gt;
-
-3.&#xC120;&#xC5B8;&#xBB38;(Declaration)-&gt;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB9BF;&#xACFC; &#xBAA8;&#xC591;&#xC774; &#xC720;&#xC0AC;&#xD558;&#xB2E4;.
-
-&lt;%!  ~ %&gt; =&gt;&#xC790;&#xBC14;&#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;(&#xC815;&#xC801; &#xBA64;&#xBC84;&#xBCC0;&#xC218; &#xC120;&#xC5B8;)
-                          -&gt;&#xC120;&#xC5B8;&#xB41C; &#xC704;&#xCE58;&#xC5D0; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xBCC0;&#xC218;&#xB97C; &#xBD88;&#xB7EC;&#xB2E4; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;
-                          -&gt;&#xBA54;&#xC11C;&#xB4DC; &#xC791;&#xC131;&#xC774; &#xAC00;&#xB2A5;-&gt;&#xC815;&#xC801;&#xBA54;&#xC11C;&#xB4DC; &#xB290;&#xB08C;
-                          -&gt;&#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD55C;&#xB370; &#xD604;&#xC2E4;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;X
-
- &lt;%!
-      String name=&quot;&#xD64D;&#xAE38;&#xB3D9;&quot;;
-
-      public String getName(){ ===&gt;&#xB530;&#xB85C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC0AC;&#xC6A9;
-          return name;                  DTO(Data Transfer Object)
-                                                      DAO(Data Access Object)
-      }
-%&gt;
-
- jsp&#xD398;&#xC774;&#xC9C0; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C; &#xB530;&#xB85C; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC120;&#xC5B8;&#xD574;&#xC11C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAD6C;&#xBB38;&#xC744; &#xC798; &#xC0AC;&#xC6A9;X
-
- &#xB514;&#xC790;&#xC774;&#xB108;(html5,css,js)+&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;(&#xBA54;&#xC11C;&#xB4DC; &#xC791;&#xC131;)=&gt;&#xD654;&#xBA74;&#xC774; &#xBCF5;&#xC7A1;
-
-=&gt;&#xBA54;&#xC11C;&#xB4DC;&#xBD80;&#xBD84;--&gt;&#xB530;&#xB85C; &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC6F9;&#xC5D0;&#xC11C; &#xBD88;&#xB7EC;&#xC624;&#xB294; &#xACBD;&#xC6B0;
-                         &#xC790;&#xBC14;&#xBE48;&#xC988;&#xD074;&#xB798;&#xC2A4;&#xC5D0;&#xC11C; &#xC791;&#xC5C5;&#xC744; &#xD55C;&#xB2E4;.-&gt;&#xC561;&#xC158;&#xD0DC;&#xADF8;
-----------------------------------------------------------------------
-
-4.&#xC8FC;&#xC11D;(comment) or &#xC9C0;&#xC2DC;&#xC5B4;
-    comment.jsp&#xB85C; &#xC791;&#xC131;
-
- JSP &#xC8FC;&#xC11D;-&gt;&#xD0DC;&#xADF8;&#xC640; &#xD0DC;&#xADF8;&#xC0AC;&#xC774;&#xC5D0; &#xC801;&#xC808;&#xD788; &#xBC30;&#xCE58;
-
-1.&lt;!-- &#xB208;&#xC5D0; &#xBCF4;&#xC774;&#xB294; &#xC8FC;&#xC11D; --&gt; =&gt;html&#xC8FC;&#xC11D;
-2.&lt;%-- &#xB208;&#xC5D0; &#xC548;&#xBCF4;&#xC774;&#xB294; &#xC8FC;&#xC11D; --%&gt;
-3.&#xC790;&#xBC14;&#xC8FC;&#xC11D;-&gt; //, /*  ~ */
-
-</pre>
+<ul>
+<li>&lt;!-- 눈에 보이는 주석 --&gt; =&gt;html주석</li>
+<li>&lt;%-- 눈에 안보이는 주석 --%&gt;</li>
+<li>자바주석-&gt; //, /* ~ */</li>
+</ul>
 <h2>2일차</h2>
-<pre class="language-">***
-contentType=&quot;text/html; charset=UTF-8&quot;
-  ==&gt;&#xD14D;&#xC2A4;&#xD2B8;&#xD615;&#xD0DC;&#xC758; html&#xBB38;&#xC11C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xBCF4;&#xB0B4;&#xC8FC;&#xB418; &#xD55C;&#xAE00;&#xC774; &#xACB0;&#xACFC;&#xC5D0; &#xD3EC;&#xD568;&#xC774; &#xB418;&#xC5B4;&#xC788;&#xB2E4;&#xBA74;
-          &#xD55C;&#xAE00;&#xC774; &#xAE68;&#xC9C0;&#xC9C0; &#xC54A;&#xC740;&#xC0C1;&#xD0DC;&#xB85C; &#xBCF4;&#xB0B4;&#xC8FC;&#xC138;&#xC694;
+<h4 class="mume-header" id="&#xD55C;&#xAE00;&#xCC98;&#xB9AC;">한글처리</h4>
 
-pageEncoding=&quot;UTF-8&quot;=&gt;&#xD55C;&#xAE00;&#xCC98;&#xB9AC;&#xD574;&#xC8FC;&#xC138;&#xC694;
+<ul>
+<li>
+<p>contentType=&quot;text/html; charset=UTF-8&quot; ==&gt;텍스트형태의 html문서로 만들어서 보내주되 한글이 결과에 포함이 되어있다면 한글이 깨지지 않은상태로 보내주세요</p>
+</li>
+<li>
+<p>pageEncoding=&quot;UTF-8&quot;=&gt;한글처리해주세요</p>
+</li>
+<li>
+<p>import=&gt;외부에서 패키지를 불러올때 사용</p>
+<ol>
+<li>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot; import=&quot;java.util.Date&quot; %&gt;</li>
+<li>&lt;%@ page import=&quot;<a href="http://java.io">java.io</a>.*,java.util.*&quot; %&gt; =&gt;속성값을 여러개 나열-&gt;,,,</li>
+<li>&lt;%@ page import=&quot;java.sql.*&quot; %&gt; =&gt;세로로 여러개의 import속성을 쓸 수있다.</li>
+</ol>
+</li>
+</ul>
+<h4 class="mume-header" id="&#xC11C;&#xBE14;&#xB9BF;&#xC758;-&#xC870;&#xAC74;">서블릿의 조건</h4>
 
-
-*** import=&gt;&#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xD328;&#xD0A4;&#xC9C0;&#xB97C; &#xBD88;&#xB7EC;&#xC62C;&#xB54C; &#xC0AC;&#xC6A9;
-
-&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
-    pageEncoding=&quot;UTF-8&quot;
-    import=&quot;java.util.Date&quot; %&gt;
-&lt;%@ page import=&quot;java.io.*,java.util.*&quot; %&gt; =&gt;&#xC18D;&#xC131;&#xAC12;&#xC744; &#xC5EC;&#xB7EC;&#xAC1C; &#xB098;&#xC5F4;-&gt;,,,
-&lt;%@ page import=&quot;java.sql.*&quot; %&gt; =&gt;&#xC138;&#xB85C;&#xB85C; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; import&#xC18D;&#xC131;&#xC744; &#xC4F8; &#xC218;&#xC788;&#xB2E4;.
-
-
-**&#xC11C;&#xBE14;&#xB9BF;&#xC758; &#xC870;&#xAC74;**
-
-1.import javax.servlet.* //&#xC11C;&#xBE14;&#xB9BF;&#xC758; &#xD074;&#xB798;&#xC2A4;
-   import javax.servlet.http.*;//&#xC6F9;&#xC0C1;&#xC5D0;&#xC11C;&#xC758; &#xC811;&#xC18D;&#xC5D0; &#xAD00;&#xB828;&#xB41C; &#xC815;&#xBCF4;
-   import java.io.*;//&#xC785;&#xCD9C;&#xB825;
-
-  =&gt;c:\tomcat8.5\lib-&gt;servlet-api.jar&#xD30C;&#xC77C;&#xC5D0; &#xC800;&#xC7A5;
-
-2.&#xBC18;&#xB4DC;&#xC2DC; publi class&#xB85C; &#xC791;&#xC131;&#xD574;&#xC57C; &#xB41C;&#xB2E4;.=&gt;&#xB204;&#xAD6C;&#xB098; &#xC811;&#xC18D;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD574;&#xC8FC;&#xAE30;&#xC704;&#xD574;
-3.&#xBC18;&#xB4DC;&#xC2DC; httpServlet&#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xC544;&#xC57C; &#xB41C;&#xB2E4;.
-
-httpServlet--&gt;&#xC0AC;&#xC774;&#xD2B8;&#xC5D0; &#xC811;&#xC18D;&#xD560;&#xB54C; &#xB9C8;&#xB2E4; &#xCC98;&#xB9AC;&#xD574;&#xC8FC;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;.
-                            get--------------&gt;do Get()&#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xC704;&#xD574;&#xC11C;
-                            post--------------&gt;doPost()
-</pre>
+<ul>
+<li>import javax.servlet.* //서블릿의 클래스 import javax.servlet.http.*;//웹상에서의 접속에 관련된 정보 import <a href="http://java.io">java.io</a>.*;//입출력</li>
+</ul>
+<blockquote>
+<p>c:\tomcat8.5\lib-&gt;servlet-api.jar파일에 저장</p>
+</blockquote>
+<ul>
+<li>
+<p>반드시 publi class로 작성해야 된다.=&gt;누구나 접속이 가능하게 해주기위해</p>
+</li>
+<li>
+<p>반드시 httpServlet클래스를 상속받아야 된다.</p>
+</li>
+</ul>
+<div class="mermaid">graph LR
+init --> doGet
+init --> doPost
+init --> service
+doPost --> destroy
+doGet --> destroy
+service --> destroy
+</div>
 <h2>3일차</h2>
-<pre class="language-">********&#xCC28;&#xC774;&#xC810;
-&lt;input type=&quot;submit&quot; value=&quot;&#xD45C;&#xB9CC;&#xB4E4;&#xAE30;&quot;&gt;
-  =&gt;&#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; action=&quot;box_proc.jsp&#xB85C; &#xC804;&#xC1A1;&#xD55C;&#xB2E4;.
-
-&lt;input type=&quot;button&quot; value=&quot;&#xD45C;&#xB9CC;&#xB4E4;&#xAE30;&quot; onclick=&quot;&#xD568;&#xC218;&#xBA85;()&quot;&gt;
-  =&gt;&#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; action=&quot;box_proc.jsp&#xB85C; (&#xC804;&#xC1A1; X)
-  =&gt;document.&#xD3FC;&#xAC1D;&#xCCB4;&#xBA85;.submit()&#xC744; &#xAF2D; &#xC368;&#xC918;&#xC57C; &#xB41C;&#xB2E4;.
-
-&lt;a href=&quot;JavaScript:&#xD638;&#xCD9C;&#xD560; &#xD568;&#xC218;&#xBA85;(~)&quot;&gt;&#xD45C;&#xB9CC;&#xB4E4;&#xAE30;&lt;/a&gt;
-=&gt;&#xC790;&#xB3D9;&#xC801;&#xC73C;&#xB85C; action=&quot;box_proc.jsp&#xB85C;  (&#xC804;&#xC1A1; X)
-  =&gt;document.&#xD3FC;&#xAC1D;&#xCCB4;&#xBA85;.submit()&#xC744; &#xAF2D; &#xC368;&#xC918;&#xC57C; &#xB41C;&#xB2E4;.
-*********
-
-
-&#xC6F9;&#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;=&gt;******&#xD398;&#xC774;&#xC9C0; &#xC774;&#xB3D9;&#xC2DC;&#xD0A4;&#xB294; &#xBC29;&#xBC95;(jsp)******* =&gt;&#xAE30;&#xC220; &#xBA74;&#xC811;
-                  =&gt;&#xC624;&#xB77C;&#xD074;-&gt;join,subQuery(&#xC2E4;&#xC2B5;)
-
-
-1.response&#xAC1D;&#xCCB4;-&gt;
-
-                                    -&gt;http:// &#xBC18;&#xB4DC;&#xC2DC; &#xC904;&#xAC83;
- //response.sendRedirect(&quot;http://www.chosun.com&quot;);  &#xC678;&#xBD80;&#xC758; &#xC0AC;&#xC774;&#xD2B8;&#xB85C; &#xC774;&#xB3D9;
-     response.sendRedirect(&quot;./req.jsp&quot;); //&#xC0C1;&#xB300;&#xACBD;&#xB85C;&#xB97C; &#xC9C0;&#xC815;(&#xB0B4;&#xBD80; &#xD30C;&#xC77C;&#xC774;&#xB3D9;)
-    =&gt;**URL&#xCC3D;&#xC774; &#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC804;&#xD658;&#xC774; &#xB418;&#xBA74;&#xC11C; &#xC774;&#xB3D9;&#xC774; &#xB41C;&#xB2E4;.
-    =&gt;&#xB370;&#xC774;&#xD130;&#xB97C; &#xC11C;&#xB85C; &#xACF5;&#xC720;&#xD560; &#xC218;&#xC5C6;&#xB2E4;.
-
-2.forward&#xC561;&#xC158;&#xD0DC;&#xADF8;==&gt;&#xBAA8;&#xB378;2&#xC758; &#xD575;&#xC2EC;
-    =&gt;&#xC678;&#xBD80;&#xC758; &#xC0AC;&#xC774;&#xD2B8;&#xB85C; &#xC774;&#xB3D9;X
-    =&gt;&#xC790;&#xAE30; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xB2E4;&#xB978; &#xD398;&#xC774;&#xC9C0;&#xB85C;&#xB9CC; &#xC774;&#xB3D9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.(O)
-    =&gt;**URL&#xCC3D;&#xC774; &#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC804;&#xD658;&#xC774; X **
-    &#xACB0;&#xB860;) &#xB370;&#xC774;&#xD130;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xBA74;&#xC11C; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC774;&#xB3D9;&#xC2DC;&#xD0AC; &#xC218; &#xAC00; &#xC788;&#xB2E4;.
-
-&#xD68C;&#xC6D0;&#xB85C;&#xADF8;&#xC778;-&gt;&#xC608;&#xB9E4;&#xD398;&#xC774;&#xC9C0; 1--&gt;&#xC608;&#xB9E4;&#xD398;&#xC774;&#xC9C0; 2---&gt;&#xC608;&#xB9E4;&#xD398;&#xC774;&#xC9C0; 3
-                    &#xC9C0;&#xC5ED;                 &#xC0C1;&#xC601;&#xAD00; &#xC2DC;&#xAC04;        &#xCE74;&#xB4DC;,&#xBB34;&#xD1B5;&#xC7A5;&#xC785;&#xAE08;
-
- &#xC6F9;-&gt;&#xD398;&#xC774;&#xC9C0;&#xC774;&#xB3D9;&#xD558;&#xBA74; &#xC804;&#xC758; &#xC815;&#xBCF4;&#xAC00; &#xC0AC;&#xB77C;&#xC9C4;&#xB2E4;.=&gt;&#xC138;&#xC158;&#xCC98;&#xB9AC;
-
-  A.jsp=&gt;B.jsp=&gt;C.jsp
- int su=100
-
-3.&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;-&gt;location.href=&quot;&#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xBA85;&quot;
-                        location.replace(&quot;http://~&#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xBA85;&quot;)
-                        history.back()-&gt;&#xC804;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
-                        history.go(-1)-&gt;&#xC804;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
-                        history.forward()-&gt;&#xC55E;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
-
-
-
-
-*****
-include&#xC561;&#xC158;&#xD0DC;&#xADF8;&#xB97C; &#xC0AC;&#xC6A9;(X) or (O)
-include&#xC9C0;&#xC2DC;&#xC5B4;&#xC758; &#xCC28;&#xC774;&#xC810;
-
-&#xACF5;&#xD1B5;&#xC810;-&gt;&#xB458;&#xB2E4; &#xC678;&#xBD80;&#xC758; &#xD30C;&#xC77C;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xBD88;&#xB7EC;&#xC640;&#xC11C; &#xD2B9;&#xC815;&#xD55C; &#xC704;&#xCE58;&#xC5D0; &#xC0BD;&#xC785;&#xD55C;&#xB2E4;.
-&#xCC28;&#xC774;&#xC810;-&gt;include &#xC561;&#xC158;&#xD0DC;&#xADF8;=&gt;&#xB3D9;&#xC801;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB41C; &#xB0B4;&#xC6A9;&#xC744; &#xD2B9;&#xC815;&#xD55C; &#xC704;&#xCE58;&#xC5D0; &#xC0BD;&#xC785;
-                                    =&gt;angular or react (&#xC0C8;&#xB85C; &#xACE0;&#xCE68; F5)
-
-            include &#xC9C0;&#xC2DC;&#xC5B4;-&gt;&#xC815;&#xC801;&#xC73C;&#xB85C; &#xBB38;&#xC790;&#xC5F4;&#xB9CC; &#xBCF5;&#xC0AC;-&gt;&#xD2B9;&#xC815;&#xD55C; &#xC704;&#xCE58;&#xC5D0; &#xC0BD;&#xC785;
+<ul>
+<li>자동적으로 action=&quot;box_proc.jsp로 전송한다.</li>
+</ul>
+<pre class="language-">&lt;input type=&quot;submit&quot; value=&quot;&#xD45C;&#xB9CC;&#xB4E4;&#xAE30;&quot;&gt;
+</pre>
+<br>
+<ul>
+<li>
+<p>자동적으로 action=&quot;box_proc.jsp로 (전송 X)</p>
+</li>
+<li>
+<p>document.폼객체명.submit()을 꼭 써줘야 된다.</p>
+</li>
+</ul>
+<pre class="language-">&lt;input type=&quot;button&quot; value=&quot;&#xD45C;&#xB9CC;&#xB4E4;&#xAE30;&quot; onclick=&quot;&#xD568;&#xC218;&#xBA85;()&quot;&gt;
+</pre>
+<hr>
+<p>내장객체 (8~9가지) //내장객체 선언</p>
+<ol>
+<li>
+<p>PageContext pageContext;//서블릿을 관리하고 정보를 공유하도록 도와주는 객체</p>
+</li>
+<li>
+<p><strong>HttpSession session = null; //세션(회원 로그인 해서 결재할때)</strong></p>
+</li>
+<li>
+<p>ServletContext application; //application(모든 jsp페이지에서 공통으로 사용하는 객체)</p>
+</li>
+<li>
+<p>ServletConfig config;//서블릿의 환경설정에 관여하는 객체</p>
+</li>
+<li>
+<p><strong>JspWriter out = null; //출력객체( 데이터를 전송할때 필요)</strong></p>
+</li>
+<li>
+<p><strong>page = this; //jsp작성할때 마다 만들어진 객체</strong></p>
+</li>
+<li>
+<p>JspWriter _jspx_out = null;</p>
+</li>
+<li>
+<p>PageContext _jspx_page_context = null;</p>
+</li>
+<li>
+<p><strong>HttpServletRequest request -&gt;요청객체</strong></p>
+</li>
+<li>
+<p><strong>HttpServletResponse response-&gt;응답객체</strong></p>
+</li>
+</ol>
+<hr>
+<h2>response</h2>
+<pre class="language-">response.setContentType(&quot;text/html;charset=utf-8&quot;);
+response.sendRedirect(&quot;&#xACBD;&#xB85C;&#xD3EC;&#xD568;&#xD574;&#xC11C; &#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xBA85;&quot;);
 
 </pre>
+<h4 class="mume-header" id="&#xD398;&#xC774;&#xC9C0;-&#xC774;&#xB3D9;&#xC5D0;-&#xAD00;&#xD558;&#xC5EC;">페이지 이동에 관하여..!</h4>
+
+<h5 class="mume-header" id="1-reponse-&#xAC1D;&#xCCB4;">1. reponse 객체</h5>
+
+<p>URL창이 이동할 페이지로 전환이 되면서 이동이 된다.</p>
+<pre class="language-">response.sendRedirect(&quot;http://www.chosun.com&quot;); //&#xC678;&#xBD80;&#xC758; &#xC0AC;&#xC774;&#xD2B8;&#xB85C; &#xC774;&#xB3D9;
+                      -&gt;http&#xB97C; &#xBC18;&#xB4DC;&#xC2DC; &#xB123;&#xC5B4;&#xC57C;&#xD568;
+response.sendRedirect(&quot;./req.jsp&quot;); //&#xC0C1;&#xB300;&#xACBD;&#xB85C;&#xB97C; &#xC9C0;&#xC815;(&#xB0B4;&#xBD80;&#xD30C;&#xC77C; &#xC774;&#xB3D9;)
+=&gt; URL&#xCC3D;&#xC774; &#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC804;&#xD658;&#xC774; &#xB418;&#xBA74;&#xC11C; &#xC774;&#xB3D9;&#xC774; &#xB41C;&#xB2E4;.
+
+</pre>
+<h5 class="mume-header" id="2-forward-&#xC561;&#xC158;&#xD0DC;&#xADF8;">2. forward 액션태그</h5>
+
+<p>URL창이 이동할 페이지로 전환이 되지 않는다.</p>
+<pre class="language-">&#xC678;&#xBD80;&#xC758; &#xC0AC;&#xC774;&#xD2B8;&#xB85C; &#xC774;&#xB3D9;&#xBD88;&#xAC00;
+&#xC790;&#xAE30; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC758; &#xB2E4;&#xB978; &#xD398;&#xC774;&#xC9C0;&#xB85C;&#xB9CC; &#xC774;&#xB3D9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.(O)
+URL&#xCC3D;&#xC774; &#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC804;&#xD658;&#xC774; &#xB418;&#xC9C0;&#xC54A;&#xB294;&#xB2E4;.
+
+&#xACB0;&#xB860;=&gt; &#xB370;&#xC774;&#xD130;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xBA74;&#xC11C; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC774;&#xB3D9;&#xC2DC;&#xD0AC; &#xC218;&#xAC00; &#xC788;&#xB2E4;.
+
+&#xD68C;&#xC6D0;&#xAC00;&#xC785; &#xD398;&#xC774;&#xC9C0; (1,2,3 ..&#xB4F1;&#xB4F1;)&#xC774; &#xC788;&#xC744;&#xB54C;
+&#xD398;&#xC774;&#xC9C0;&#xAC00; &#xC774;&#xB3D9;&#xD558;&#xBA74; &#xB370;&#xC774;&#xD130;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xBA74;&#xC11C; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC774;&#xB3D9;&#xD55C;&#xB2E4;.
+</pre>
+<h5 class="mume-header" id="3-&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;">3. 자바스크립트</h5>
+
+<pre class="language-">location.href=&quot;&#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xBA85;&quot; //&#xAE30;&#xB85D;
+location.replace(&quot;http://~&#xC774;&#xB3D9;&#xD560; &#xD398;&#xC774;&#xC9C0;&#xBA85;&quot;) //&#xB178;&#xAE30;&#xB85D;
+
+&#xC804;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
+history.back()
+
+&#xC804;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
+history.go(-1)-
+
+&#xC55E;&#xC758; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;
+history.forward()
+</pre>
+<h2>액션태그</h2>
+<p>JSP에서 자주 사용하는 특정 동작들에 대해서 미리 만든 예약어</p>
+<p>메인페이지(index.jsp : top jsp,bottom jsp,left jsp,right jsp)</p>
+<p>=&gt; 객체를 생성,Setter,Getter 태그</p>
+<h4 class="mume-header" id="&#xC561;&#xC158;&#xD0DC;&#xADF8;&#xC758;-&#xC885;&#xB958;">액션태그의 종류</h4>
+
+<ol>
+<li>UseBean</li>
+<li>setProperty</li>
+<li>getProperty</li>
+<li>includeforward</li>
+</ol>
+<pre class="language-">*****************flush*******************
+ &#xD654;&#xBA74;&#xC5D0; &#xCD9C;&#xB825;&#xD558;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xBC84;&#xD37C;&#xC5D0; &#xC313;&#xC544;&#xB193;&#xC74C;(8kb)
+ flush&#xD558;&#xBA74; &#xB098;&#xC624;&#xB294; &#xD604;&#xC0C1;
+ 1. &#xB354;&#xC774;&#xC0C1; &#xCFE0;&#xD0A4;&#xB97C; &#xC9D1;&#xC5B4;&#xB123;&#xC744;&#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+ 2. &#xB354;&#xC774;&#xC0C1; &#xC11C;&#xBC84;&#xCABD;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xB978; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC774;&#xB3D9;&#xC2DC;&#xD0AC;&#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+ 3. &#xB354;&#xC774;&#xC0C1; &#xD5E4;&#xB354;&#xB97C; &#xB123;&#xC744;&#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
+</pre>
+<p>&lt;식별자 : 액션태그명 액션태그의 속성명=&quot;속성값&quot; ~/&gt;</p>
+<table>
+<thead>
+<tr>
+<th>include 액션태그</th>
+<th>include 지시어</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동적으로 변경된 내용을 특정한 위치에 삽입</td>
+<td>정적으로 문자열만 복사</td>
+</tr>
+<tr>
+<td>angular or react(새로고침 F5)</td>
+<td>특정한 위치에 삽입</td>
+</tr>
+</tbody>
+</table>
 <h2>4일차</h2>
-<pre class="language-">
- ********&#xC790;&#xBC14;&#xBE48;&#xC988; 3&#xAC00;&#xC9C0;********
+<h4 class="mume-header" id="&#xC790;&#xBC14;&#xBE48;&#xC988;&#xC758;-3&#xAC00;&#xC9C0;">자바빈즈의 3가지</h4>
 
-1.&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;-&gt;useBean &#xD0DC;&#xADF8;
+<h5 class="mume-header" id="1-&#xAC1D;&#xCCB4;&#xB97C;-&#xC0DD;&#xC131;-usebean-&#xD0DC;&#xADF8;">1. 객체를 생성-&gt;useBean 태그</h5>
 
- //BeanTest bt=new BeanTest();
-&lt;jsp:useBean id=&quot;&#xAC1D;&#xCCB4;&#xBA85;&quot;  class=&quot;&#xD328;&#xD0A4;&#xC9C0;&#xBA85;.&#xD074;&#xB798;&#xC2A4;&#xBA85;&quot;  scope=&quot;&#xC0AC;&#xC6A9;&#xBC94;&#xC704;&quot; /&gt;
-* page-&gt;&#xD604;&#xC7AC; jsp&#xB0B4;&#xC5D0;&#xC11C;&#xB9CC;(default)
-* request-&gt;&#xD55C;&#xD398;&#xC774;&#xC9C0; &#xC774;&#xC0C1;
-* session-&gt;&#xB85C;&#xADF8;&#xC778;&#xD55C; &#xB3D9;&#xC548;
-* application-&gt;&#xBAA8;&#xB4E0; &#xD398;&#xC774;&#xC9C0;
+<pre class="language-"> //BeanTest bt=new BeanTest();
+ &lt;jsp:useBean id=&quot;&#xAC1D;&#xCCB4;&#xBA85;&quot;  class=&quot;&#xD328;&#xD0A4;&#xC9C0;&#xBA85;.&#xD074;&#xB798;&#xC2A4;&#xBA85;&quot;  scope=&quot;&#xC0AC;&#xC6A9;&#xBC94;&#xC704;&quot; /&gt;
+</pre>
+<ul>
+<li>
+<p>page-&gt;현재 jsp내에서만(default)</p>
+</li>
+<li>
+<p>request-&gt;한페이지 이상</p>
+</li>
+<li>
+<p>session-&gt;로그인한 동안</p>
+</li>
+<li>
+<p>application-&gt;모든 페이지</p>
+</li>
+</ul>
+<pre class="language-">&lt;jsp:useBean id=&quot;bt&quot; class=&quot;test.BeanTest&quot; scope=&quot;page&quot; /&gt;
+</pre>
+<h5 class="mume-header" id="2-setter-&#xD638;&#xCD9C;">2. -&gt;Setter 호출</h5>
 
-&lt;jsp:useBean id=&quot;bt&quot; class=&quot;test.BeanTest&quot; scope=&quot;page&quot; /&gt;
+<p>형식)</p>
+<pre class="language-">&lt;jsp:setProperty name=&quot;&#xAC1D;&#xCCB4;&#xBA85;&quot; property=&quot;&#xBA64;&#xBC84;&#xBCC0;&#xC218;&#xBA85;(str)&quot; value=&quot;&#xC800;&#xC7A5;&#xD560;&#xAC12;&quot; /&gt;
+&lt;jsp:setProperty name=&quot;bt&quot; property=&quot;str&quot;  value=&quot;&lt;%=&#xBCC0;&#xC218;&#xBA85;%&gt;&quot; /&gt;
+</pre>
+<h5 class="mume-header" id="3getter-method&#xB97C;-&#xB300;&#xC2E0;-&#xC0AC;&#xC6A9;&#xD560;-&#xC218;-&#xC788;&#xB294;-&#xD0DC;&#xADF8;">3.Getter Method를 대신 사용할 수 있는 태그</h5>
 
-2. -&gt;Setter &#xD638;&#xCD9C;
-
-&#xD615;&#xC2DD;) &lt;jsp:setProperty name=&quot;&#xAC1D;&#xCCB4;&#xBA85;&quot; property=&quot;&#xBA64;&#xBC84;&#xBCC0;&#xC218;&#xBA85;(str)&quot; value=&quot;&#xC800;&#xC7A5;&#xD560;&#xAC12;&quot; /&gt;
-  &lt;jsp:setProperty name=&quot;bt&quot; property=&quot;str&quot;  value=&quot;&lt;%=&#xBCC0;&#xC218;&#xBA85;%&gt;&quot; /&gt;
-
-3.Getter Method&#xB97C; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xD0DC;&#xADF8;
-&lt;%=bt.getStr() %&gt;
-&#xD615;&#xC2DD;)
+<p>&lt;%=bt.getStr() %&gt;</p>
+<pre class="language-">&#xD615;&#xC2DD;)
 &lt;jsp:getProperty name=&quot;&#xAC1D;&#xCCB4;&#xBA85; &quot; property=&quot;&#xBA64;&#xBC84;&#xBCC0;&#xC218;&#xBA85;&quot; /&gt;
- &lt;jsp:getProperty name=&quot;bt &quot; property=&quot;str&quot; /&gt;
+&lt;jsp:getProperty name=&quot;bt &quot; property=&quot;str&quot; /&gt;
 </pre>
 <h2>5일차</h2>
-<pre class="language-">**
-&#xCFE0;&#xD0A4;&#xC640; &#xC138;&#xC158;&#xC758; &#xACF5;&#xD1B5;&#xC810;-&gt;&#xB458;&#xB2E4; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;
-&#xC11C;&#xBC84;&#xC640;&#xC758; &#xC5F0;&#xACB0;&#xC744; &#xC77C;&#xC815;&#xC2DC;&#xAC04;&#xB3D9;&#xC548;
-&#xC720;&#xC9C0;&#xC2DC;&#xCF1C;&#xC8FC;&#xB294; &#xBC29;&#xBC95;(&#xB85C;&#xADF8;&#xC778;)
+<h4 class="mume-header" id="&#xCFE0;&#xD0A4;&#xC640;-&#xC138;&#xC158;">쿠키와 세션</h4>
 
-&#xCFE0;&#xD0A4;-&gt;&#xD30C;&#xC77C;&#xB85C; &#xC800;&#xC7A5;-&gt;&#xD574;&#xD0B9;&#xC758; &#xC18C;&#xC9C0;,&#xAC1C;&#xC778;&#xC815;&#xBCF4; &#xC720;&#xCD9C;-&gt;&#xC798; &#xC0AC;&#xC6A9;X
-&#xC138;&#xC158;-&gt;&#xC11C;&#xBC84;&#xC758; &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0; &#xC800;&#xC7A5;-&gt;30&#xBD84;(default)&#xC720;&#xC9C0;-&gt;30&#xBD84;&#xD6C4; &#xC790;&#xB3D9; &#xC885;&#xB8CC;
-**
+<h5 class="mume-header" id="&#xACF5;&#xD1B5;&#xC810;">공통점</h5>
 
-******************************
-1.Java Application&#xC758; DB&#xC5F0;&#xB3D9;&#xBC29;&#xBC95;(JDBC)
+<p>둘다 클라이언트 서버와의 연결을 일정시간동안 유지시켜주는 방법(로그인)</p>
+<h5 class="mume-header" id="&#xCC28;&#xC774;&#xC810;">차이점</h5>
 
- 1)&#xC811;&#xC18D; ojdbc6.jar-&gt;C:\jdk1.8\jre\lib\ext=&gt;&#xBCF5;&#xC0AC;&#xB97C; &#xD560;&#xAC83;(&#xC804;&#xC5ED;)=&gt;&#xCD94;&#xAC00;&#xC801;&#xC778; &#xC791;&#xC5C5;
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>쿠키</th>
+<th>세션</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>저장위치</td>
+<td>파일로저장</td>
+<td>서버의 메모리에저장</td>
+</tr>
+<tr>
+<td>특징</td>
+<td>해킹의 소지<br>개인정보의 유출 가능성이 있다.</td>
+<td>30분(default)유지<br>30분후 자동종료</td>
+</tr>
+<tr>
+<td>저장방법</td>
+<td>Cookie 인스턴트명=new Cookie(&quot;이름&quot;,&quot;값&quot;)<br>response.addCookie(인스턴트명)</td>
+<td>세션의 메모리에 저장(HashMap)<br>session.setAttribute(키,저장할값(계정id))<br>session.getAttribute(키명)</td>
+</tr>
+<tr>
+<td>저장되는 형식</td>
+<td>텍스트</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>리소스</td>
+<td>클라이언트의 리소스 사용</td>
+<td>서버의 리소스 사용</td>
+</tr>
+<tr>
+<td>용량제한</td>
+<td>한 도메인당 20개<br>쿠키하나당 4kb<br>총 300개</td>
+<td>서버가 허용하는 용량</td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="db&#xC5F0;&#xB3D9;-&#xBC29;&#xBC95;">DB연동 방법</h4>
 
-  -&gt;&#xC774;&#xD074;&#xB9BD;&#xC2A4;&#xC5D0;&#xC11C; &#xACBD;&#xB85C;&#xB97C; &#xC9C0;&#xC815; ojdbc6.jar&#xB97C; &#xBD88;&#xB7EC;&#xC624;&#xAE30;
-
-  -&gt;&#xB2E4;&#xB978; &#xACBD;&#xB85C;&#xC5D0; ojdbc6.jar&#xB97C; &#xBCF5;&#xC0AC;-&gt;classpath&#xD658;&#xACBD;&#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;-&gt;&#xADF8; &#xACBD;&#xB85C;&#xC9C0;&#xC815;
-     (&#xC9C0;&#xC5ED;)
-
-2.Web Application&#xC758; DB&#xC5F0;&#xB3D9;&#xBC29;&#xBC95;=&gt;
-
-       1)Tomcat8.5.x\lib\ &#xC811;&#xC18D; &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xB97C; &#xBCF5;&#xC0AC;
-                                      ojdbc6.jar (&#xC804;&#xC5ED;)
-       2)JspMember
-                |
-                 -WebContent
-                         |
-                          -WEB-INF
-                                 |
-                                   -lib-&gt;ojdbc6.jar (&#xC9C0;&#xC5ED;)
-                                            my~.jar
-
-     -&gt;&#xC774;&#xD074;&#xB9BD;&#xC2A4;&#xC5D0;&#xC11C; &#xACBD;&#xB85C;&#xB97C; &#xC9C0;&#xC815; ojdbc6.jar&#xB97C; &#xBD88;&#xB7EC;&#xC624;&#xAE30;
-----------------------------------------------------
-*******************************
-</pre>
-<h2>6일차</h2>
-<pre class="language-">**&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xBC29;&#xBC95;**
-
-1.Login.jsp-&gt;LoginProc.jsp
-
-2.&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xD568;&#xC218;---&gt;&#xD2B9;&#xC815; jsp&#xB85C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACBD;&#xC6B0;
-------------&gt; &#xD504;&#xB9B0;&#xD2B8; &#xD588;&#xC74C;
-</pre>
+<p>자바와 웹</p>
+<table>
+<thead>
+<tr>
+<th>분류</th>
+<th>Java Application</th>
+<th>Web Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전역설정</td>
+<td>C:\jdk1.8\jre\lib\ext에 넣기</td>
+<td>C:\Tomcat 8.5\lib에 넣기</td>
+</tr>
+<tr>
+<td>지역설정</td>
+<td>다른경로에 jdbc를 복사해서<br>path 변수를 선언쿠</td>
+<td><center>WebContent안에<br>WEB-INF안에<br>lib안에 넣기</center></td>
+</tr>
+</tbody>
+</table>
 <h2>8일차</h2>
-<pre class="language-">*****&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xBC29;&#xBC95;****(&#xAE30;&#xC220;&#xBA74;&#xC811;&#xC2DC;)
-*************************************
+<h4 class="mume-header" id="3-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C;-&#xC804;&#xB2EC;&#xD558;&#xAE30;&#xC704;&#xD55C;-4&#xAC00;&#xC9C0;-&#xBC29;&#xBC95;">3. 매개변수를 전달하기위한 4가지 방법</h4>
 
-1.&#xB9C1;&#xD06C;&#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC774;&#xC6A9;&#xD574;&#xC11C; &#xD398;&#xC774;&#xC9C0; &#xC804;&#xD658;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;
- &lt;a href=&quot;DelCheckForm.jsp?mem_id=&lt;%=mem_id%&gt;&quot;&gt;&#xD68C;&#xC6D0;&#xD0C8;&#xD1F4;&lt;/a&gt;
+<h5 class="mume-header" id="&#x1100;-&#xB9C1;&#xD06C;&#xBB38;&#xC790;&#xC5F4;&#xC744;-&#xC774;&#xC6A9;&#xD574;&#xC11C;-&#xD398;&#xC774;&#xC9C0;-&#xC804;&#xD658;&#xD560;&#xB54C;-&#xC0AC;&#xC6A9;">ㄱ. 링크문자열을 이용해서 페이지 전환할때 사용</h5>
 
-2.Request&#xAC1D;&#xCCB4; &#xB610;&#xB294; Session&#xAC1D;&#xCCB4;&#xB97C; &#xC774;&#xC6A9;&#xD55C; &#xB370;&#xC774;&#xD130; &#xACF5;&#xC720;&#xBC29;&#xBC95;
-&lt;a href=&quot;MemberUpdate.jsp&quot;&gt;&#xD68C;&#xC6D0;&#xC218;&#xC815;&lt;/a&gt;
- =&gt;String mem_id=(String)session.getAttribute(&quot;idKey&quot;)
-
-3.&lt;form&gt;&#xD0DC;&#xADF8;&#xB0B4;&#xBD80;&#xC5D0; &lt;input type=&quot;hidden&quot;~&gt;&#xAC12;&#xC744; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACBD;&#xC6B0;
-   &#xD615;&#xC2DD;) &lt;input type=&quot;hidden&quot; name=&quot;&#xC804;&#xB2EC;&#xD560;&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xBA85;&quot; value=&quot;&#xC804;&#xB2EC;&#xD560;&#xAC12;&quot;&gt;
-ex)&lt;input type=&quot;hidden&quot; name=&quot;mem_id&quot; value=&quot;&lt;%=mem_id%&gt;&quot; &gt;
-
-  &lt;input type=&quot;hidden&quot; name=&quot;mem_id&quot; value=&quot;&lt;%=mem_id%&gt;&quot; &gt;
-    &#xB300;&#xC2E0;&#xC5D0; action&#xC18D;&#xC131;&#xAC12;&#xC5D0;
-     action=&quot;&#xC774;&#xB3D9;&#xD560;&#xD398;&#xC774;&#xC9C0;&#xBA85;?&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xBA85;=&#xC804;&#xB2EC;&#xD560;&#xAC12;&amp;&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xBA85;2=&#xAC12;2,,,
-4.action=&quot;delePro.jsp?mem_id=&lt;%=mem_id%&gt;
+<pre class="language-java"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"DelCheckForm.jsp?mem_id=&lt;%=mem_id%>"</span><span class="token operator">></span>회원탈퇴<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
 </pre>
+<h5 class="mume-header" id="&#x1102;-rrequest&#xAC1D;&#xCCB4;-&#xB610;&#xB294;-session&#xAC1D;&#xCCB4;&#xB97C;-&#xC774;&#xC6A9;&#xD55C;-&#xB370;&#xC774;&#xD130;-&#xACF5;&#xC720;&#xBC29;&#xBC95;">ㄴ. Rrequest객체 또는 Session객체를 이용한 데이터 공유방법</h5>
+
+<pre class="language-java"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"MemberUpdate.jsp"</span><span class="token operator">></span>회원수정<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+String mem_id<span class="token operator">=</span><span class="token punctuation">(</span>String<span class="token punctuation">)</span>session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"idKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+<h5 class="mume-header" id="&#x1103;-form&#xD0DC;&#xADF8;-&#xB0B4;&#xBD80;&#xC5D0;-input-typehidden-~&#xAC12;&#xC744;-&#xC804;&#xB2EC;&#xD558;&#xB294;-&#xACBD;&#xC6B0;">ㄷ. &lt;form&gt;태그 내부에 &lt;input type=&quot;hidden&quot; ~&gt;값을 전달하는 경우</h5>
+
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>전달할매개변수명<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>전달할 값<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hidden<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mem_id<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%<span class="token punctuation">=</span>mem_id %<span class="token punctuation">></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</pre>
+<h5 class="mume-header" id="&#x1105;-actiondeleprojspmem_idmem_id">ㄹ. action=&quot;delePro.jsp?mem_id=&lt;%=mem_id%&gt;</h5>
+
 <h2>9일차</h2>
-<pre class="language-">
-1.show databases;==&gt;&#xD604;&#xC7AC; &#xC5B4;&#xB5A4; &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4; &#xBAA9;&#xB85D;&#xD655;&#xC778;
+<p>1.show databases;==&gt;현재 어떤 데이터베이스 목록확인</p>
+<ul>
+<li>mysql&gt;show databases; //탐색기의 폴더처럼 생각</li>
+</ul>
+<p>2.특정 DB에 접속-&gt;들어가고 싶다.</p>
+<ul>
+<li>
+<p>use 전환할 DB명</p>
+</li>
+<li>
+<p>mysql&gt; use mysql; //DB에는 테이블이 들어있다.</p>
+</li>
+<li>
+<p>Database changed</p>
+</li>
+</ul>
+<p>3.DB에 들어가 있는 테이블을 보여주세요(목록)</p>
+<ul>
+<li>
+<p>mysql&gt;show tables;</p>
+</li>
+<li>
+<p>mysql&gt; show tables;</p>
+</li>
+</ul>
+<p>4.desc user; //구조확인</p>
+<p>5.select * from user;</p>
+<h2>10일차(모델1의 게시판- 글목록보기와 글쓰기)</h2>
+<h4 class="mume-header" id="&#xAE00;&#xBAA9;&#xB85D;&#xBCF4;&#xAE30;">글목록보기</h4>
 
-mysql&gt;show databases; //&#xD0D0;&#xC0C9;&#xAE30;&#xC758; &#xD3F4;&#xB354;&#xCC98;&#xB7FC; &#xC0DD;&#xAC01;
+<h5 class="mume-header" id="1-mysql-&#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;-&#xCD94;&#xAC00;">1. mysql 라이브러리 추가</h5>
 
-2.&#xD2B9;&#xC815; DB&#xC5D0; &#xC811;&#xC18D;-&gt;&#xB4E4;&#xC5B4;&#xAC00;&#xACE0; &#xC2F6;&#xB2E4;.
- use &#xC804;&#xD658;&#xD560; DB&#xBA85;
-
-mysql&gt; use mysql;  //DB&#xC5D0;&#xB294; &#xD14C;&#xC774;&#xBE14;&#xC774; &#xB4E4;&#xC5B4;&#xC788;&#xB2E4;.
-Database changed
-
-3.DB&#xC5D0; &#xB4E4;&#xC5B4;&#xAC00; &#xC788;&#xB294; &#xD14C;&#xC774;&#xBE14;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xC138;&#xC694;(&#xBAA9;&#xB85D;)
-mysql&gt;show tables;
-
-mysql&gt; show tables;
-
-4.desc user; //&#xAD6C;&#xC870;&#xD655;&#xC778;
-5.select * from user;
----------------------------
-mysql&gt;exit-&gt;&#xC885;&#xB8CC;
----------------------------
-SQLGate for Mysql-&gt;30&#xC77C;
-
-&#xC720;&#xC800;&#xBA85;:root
-&#xD328;&#xC2A4;&#xC6CC;&#xB4DC;:1234
-&#xC11C;&#xBC84;:localhost
-&#xD3EC;&#xD2B8;:3306------&gt;3307
-&#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;:mysql -&gt;&#xCC98;&#xC74C;&#xC5D0;&#xB294; &#xC874;&#xC7AC;&#xD558;&#xB294; DB&#xC5D0; &#xC811;&#xC18D;
-**&#xCE90;&#xB9AD;&#xD130;&#xC14B;:utf8
-**&#xC720;&#xB2C8;&#xCF54;&#xB4DC; &#xC0AC;&#xC6A9;-&gt;&#xBC18;&#xB4DC;&#xC2DC; &#xCCB4;&#xD06C;&#xD560;&#xAC83;-&gt;&#xD55C;&#xAE00;&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;
-  &#xC5F0;&#xACB0;&#xD14C;&#xC2A4;&#xD2B8;-&gt;&#xC811;&#xC18D;&#xC131;&#xACF5;
+<p><strong>2. list.jsp 작성</strong></p>
+<p>​ C:\webtest\4.jsp\모델1의 게시판자료\게시판디자인\list.html 파일을 list.jsp 파일로 만든다</p>
+<p>​ WebContent폴더에 images 폴더 복사&amp;붙여넣기</p>
+<ol>
+<li>
+<p><strong>데이터 넣기</strong></p>
+<ul>
+<li>
+<p>C:\webtest\4.jsp\10일차(모델1의 게시판-글목록보기,글쓰기 구현)\boardInsert.SQL</p>
+</li>
+<li>
+<pre class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> board <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'조수영'</span><span class="token punctuation">,</span><span class="token string">'nup49rok1@empal.com'</span><span class="token punctuation">,</span><span class="token string">'[공지사항]게시판사용법'</span><span class="token punctuation">,</span>
+<span class="token string">'1234'</span><span class="token punctuation">,</span><span class="token string">'2017-12-26 17:23'</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">'게시판 테스트'</span><span class="token punctuation">,</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre>
-<h2>11일차</h2>
-<pre class="language-">***&#xB2E4;&#xC591;&#xD55C;&#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACBD;&#xC6B0;***
-------------------------------------------------------------------------------------                 
-action=&quot;updatePro.jsp?num=&lt;%=num%&gt;&amp;pageNum=&lt;%=pageNum%&gt;&quot;
----------------------------------------------------------------------------------
-action=&quot;updatePro.jsp&quot;
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 class="mume-header" id="&#xAE00;&#xC4F0;&#xAE30;">글쓰기</h4>
 
-&lt;input type=&quot;hidden&quot; name=&quot;num&quot; value=&quot;&lt;%=num%&gt;&quot;&gt;
+<p>신규글만 작성 : num , ref , re_step , re_level의 매개변수 값이 X</p>
+<p>답변글을 작성 : num , ref , re_step , re_level의 매개변수 값이 O</p>
+<ol>
+<li>
+<p>BoardDAO 에서 insertArticle() 메서드 작성</p>
+</li>
+<li>
+<p>writerForm.jsp -&gt; writerPro.jsp 작성</p>
+<ul>
+<li>
+<p>게시판디자인 폴더에서 writeForm , script , style 파일 가져오기(WebContent 폴더</p>
+</li>
+<li>
+<pre class="language-">onsubmit=&quot;return writerSave()&quot;
+writerSave() &#xD638;&#xCD9C; &#xD558;&#xBA74;&#xC11C; &#xD544;&#xC218; &#xC785;&#xB825;&#xC744; &#xD558;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0; &#xBC18;&#xD658;&#xAC12;&#xC774; false
+&#xBB38;&#xC81C;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74; true -&gt; writerPro.jsp&#xB85C; &#xC804;&#xC1A1;
+</pre>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2>11일차</h2>
+<h4 class="mume-header" id="&#xB2E4;&#xC591;&#xD55C;&#xBC29;&#xBC95;&#xC73C;&#xB85C;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C;-&#xC804;&#xB2EC;&#xD558;&#xB294;-&#xACBD;&#xC6B0;">다양한방법으로 매개변수를 전달하는 경우</h4>
+
+<pre class="language-">action=&quot;updatePro.jsp?num=&lt;%=num%&gt;&amp;pageNum=&lt;%=pageNum%&gt;&quot;
+</pre>
+<pre class="language-">action=&quot;updatePro.jsp&quot;
+</pre>
+<pre class="language-">&lt;input type=&quot;hidden&quot; name=&quot;num&quot; value=&quot;&lt;%=num%&gt;&quot;&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;pageNum&quot; value=&quot;&lt;%=pageNum%&gt;&quot;&gt;
 </pre>
+<h2>13일차</h2>
+<h2>forEach.jsp</h2>
+<p>자바에서의 for문</p>
+<pre class="language-java"><span class="token keyword">int</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	sum <span class="token operator">+=</span>i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+<p>jstl에서의 forEach문</p>
+<pre class="language-java"><span class="token operator">&lt;</span>c<span class="token operator">:</span>forEach var<span class="token operator">=</span><span class="token string">"i"</span> begin<span class="token operator">=</span><span class="token string">"1"</span> end<span class="token operator">=</span><span class="token string">"100"</span> step<span class="token operator">=</span><span class="token string">"2"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>c<span class="token operator">:</span>set var<span class="token operator">=</span><span class="token string">"sum"</span> value<span class="token operator">=</span><span class="token string">"${sum+i}"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>c<span class="token operator">:</span>forEach<span class="token operator">></span>
+</pre>
 
+      </div>
     </body>
     
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: false
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false 
+}
+mermaidAPI.initialize(window['MERMAID_CONFIG'] || {})
+
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
     
     <script>
 (function bindTaskListEvent() {
@@ -317,4 +569,18 @@ action=&quot;updatePro.jsp&quot;
   }
 }())    
 </script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
   </html>
